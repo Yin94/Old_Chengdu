@@ -1,0 +1,115 @@
+.openBtn {
+  font-size: 30px;
+  height: 80%;
+  background-color: #9d0315;
+  color: wheat;
+  position: absolute;
+  margin-top: 100px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+
+.container {
+  border-radius: 0 4px 4px 0;
+  width: 0;
+  overflow: hidden;
+  -webkit-transition: 1s;
+  transition: 1s;
+  height: 80%;
+  margin-top: 100px;
+  background-color: #9d0315;
+  position: absolute;
+  z-index: 1;
+}
+
+.container > a {
+  cursor: pointer;
+  color: wheat;
+  font-weight: bold;
+  font-size: 2.5em;
+  position: absolute;
+  right: 5px;
+  z-index: 1;
+  text-decoration: none;
+}
+
+.container > a:hover {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+.container .main {
+  padding-top: 50px;
+}
+
+.container .main a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.container .main a p {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.container .main a p:hover span:last-child {
+  color: wheat;
+}
+
+.container .main a span:first-child {
+  color: wheat;
+  -webkit-transition: 1s;
+  transition: 1s;
+  position: relative;
+  left: -38px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container .main a span:last-child {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container .main a:hover span:first-child {
+  left: 0px;
+  display: inline-block;
+}
+
+.container .main a:hover span:last-child {
+  padding-left: 10px;
+}
+
+@media only screen and (max-width: 1800px) {
+  .container > a {
+    font-size: 1.9em;
+  }
+  .container .main a p {
+    font-size: 1.4em;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .container > a {
+    font-size: 1.7em;
+  }
+  .container .main a p {
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    min-width: 50%;
+  }
+  .container > a {
+    font-size: 1.8em;
+  }
+  .container .main a p {
+    font-size: 1.3em;
+  }
+}
+/*# sourceMappingURL=NavBar.css.map */

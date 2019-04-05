@@ -1,4 +1,6 @@
 button {
   padding: 15px;
   font-weight: bold;
+  cursor: pointer;
+  outline: none;
 }

@@ -1,0 +1,66 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  background-size: contain;
+  overflow: auto;
+  background-image: url("../../assets/images/MealList/bg1.jpg");
+  background-repeat: repeat;
+}
+
+.container .main {
+  -webkit-animation: fadeIn 2s;
+          animation: fadeIn 2s;
+  border-radius: 0;
+  width: 70%;
+  margin: auto;
+  background-color: wheat;
+  padding: 10px;
+}
+
+.container .main div[id='mealList'] {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .container .main div[id='mealList'] {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container .main div[id='mealList'] {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container .main div[id='mealList'] {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+/*# sourceMappingURL=MealList.css.map */

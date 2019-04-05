@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Auth from './containers/Auth/Auth';
-import CourseList from './containers/CourseList/CourseList';
+import Meals from './containers/Meals/Meals';
+import NavBar from './containers/NavBar/NavBar';
 import './App.css';
 import { Route, Redirect, Switch } from 'react-router-dom';
 
@@ -15,10 +16,14 @@ class App extends Component {
   render() {
     return (
       <div id='app'>
-        {this.state.isStart && <Redirect to='/auth/1' />}
+        {/* {this.state.isStart && <Redirect to='/auth/1' />} */}
+
+        <NavBar />
+
         <Switch>
+          <Route path='/menu' component={Meals} />
           <Route path='/auth/:mode' component={Auth} />
-          <Route path='/course-list' component={CourseList} />
+          <Redirect to='menu' />
         </Switch>
       </div>
     );

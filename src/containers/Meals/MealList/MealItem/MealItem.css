@@ -1,0 +1,57 @@
+.container {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  background-color: #af191c;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 20px 0;
+      grid-template-areas: 'image image' 'rating orders' 'name name';
+}
+
+.container * {
+  color: white;
+}
+
+.container img {
+  margin-top: 10px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: image;
+  width: 100%;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.container strong {
+  font-weight: bold;
+}
+
+.container strong small {
+  font-weight: normal;
+}
+
+.container strong:first-child {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: rating;
+}
+
+.container strong:last-child {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: orders;
+}
+
+.container p {
+  text-align: center;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: name;
+  font-size: 1.8em;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=MealItem.css.map */

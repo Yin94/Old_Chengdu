@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  height: auto;
+
+  margin: auto;
+  background-color: #af191c;
+  display: grid;
+  grid-gap: 20px 0;
+  grid-template-areas: 'image image' 'rating orders' 'name name';
+  * {
+    color: white;
+  }
+  img {
+    margin-top: 10px;
+    grid-area: image;
+    width: 100%;
+    border-radius: 0;
+    cursor: pointer;
+  }
+  strong {
+    font-weight: bold;
+    small {
+      font-weight: normal;
+    }
+  }
+  strong:first-child {
+    grid-area: rating;
+  }
+  strong:last-child {
+    grid-area: orders;
+  }
+  p {
+    text-align: center;
+    grid-area: name;
+    font-size: 1.8em;
+    padding-bottom: 20px;
+    cursor: pointer;
+  }
+}

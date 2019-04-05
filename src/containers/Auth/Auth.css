@@ -10,6 +10,10 @@
 }
 
 .container form {
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   opacity: 0.9;
   width: 80%;
   max-width: 500px;
@@ -67,7 +71,29 @@
   background-color: #e4e3e3;
 }
 
+.container form .controlGroup input:focus {
+  background-color: white;
+}
+
 .container form .btnGroup {
   padding-bottom: 10px;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
 }
 /*# sourceMappingURL=Auth.css.map */

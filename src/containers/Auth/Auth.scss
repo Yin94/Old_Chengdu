@@ -8,6 +8,8 @@
   background-image: url('../../assets/images/Auth/background.jpg');
   position: relative;
   form {
+    animation-name: fadein;
+    animation-duration: 1s;
     opacity: 0.9;
     width: 80%;
     max-width: 500px;
@@ -52,9 +54,21 @@
         border-width: 0;
         background-color: #e4e3e3;
       }
+      input:focus {
+        background-color: white;
+      }
     }
     .btnGroup {
       padding-bottom: 10px;
     }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
   }
 }

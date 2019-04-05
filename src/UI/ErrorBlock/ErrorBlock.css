@@ -1,0 +1,19 @@
+.error {
+  background-color: red;
+  color: white;
+  margin: 5px 0;
+  padding: 5px 7px;
+  font-size: 0.9em;
+  text-align: left;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
