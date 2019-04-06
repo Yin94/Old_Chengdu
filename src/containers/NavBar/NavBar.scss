@@ -11,7 +11,6 @@
 
 .container {
   border-radius: 0 4px 4px 0;
-
   width: 0;
   overflow: hidden;
   transition: 1s;
@@ -19,8 +18,8 @@
   margin-top: 100px;
   background-color: #9d0315;
   position: absolute;
-
-  z-index: 1;
+  opacity: 0.95;
+  z-index: 4;
 
   > a {
     cursor: pointer;
@@ -29,11 +28,8 @@
     font-size: 2.5em;
     position: absolute;
     right: 5px;
-    z-index: 1;
+    z-index: 4;
     text-decoration: none;
-  }
-  > a:hover {
-    filter: brightness(50%);
   }
 
   .main {
@@ -45,11 +41,16 @@
       color: white;
       cursor: pointer;
       p {
+        img {
+          width: 15%;
+          position: relative;
+          left: 20px;
+        }
         font-size: 2em;
         font-weight: bold;
         padding: 10px 20px;
       }
-      p:hover span:last-child {
+      p:hover span:nth-child(2) {
         color: wheat;
       }
       span:first-child {
@@ -59,16 +60,13 @@
         left: -38px;
         transition: 0.5s;
       }
-      span:last-child {
-        transition: 0.5s;
-      }
     }
     a:hover {
       span:first-child {
         left: 0px;
         display: inline-block;
       }
-      span:last-child {
+      span:nth-child(2) {
         padding-left: 10px;
       }
     }
@@ -107,7 +105,6 @@
 
 @media only screen and (max-width: 1000px) {
   .container {
-    min-width: 50%;
     > a {
       font-size: 1.8em;
     }

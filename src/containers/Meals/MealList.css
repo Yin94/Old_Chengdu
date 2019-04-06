@@ -12,9 +12,27 @@
           animation: fadeIn 2s;
   border-radius: 0;
   width: 70%;
-  margin: auto;
-  background-color: wheat;
-  padding: 10px;
+  padding: 10px 40px 100px 40px;
+  margin: 50px auto;
+  position: relative;
+  background-color: rgba(245, 222, 179, 0.8);
+}
+
+.container .main > img {
+  position: relative;
+  width: 10%;
+  right: -63%;
+  top: 0;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.container .main > img:first-child {
+  position: relative;
+  width: 20%;
+  top: 0;
+  left: 0;
+  display: inline-block;
 }
 
 .container .main div[id='mealList'] {

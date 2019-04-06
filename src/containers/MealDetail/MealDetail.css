@@ -1,0 +1,172 @@
+.container {
+  width: 90%;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  margin: auto;
+  height: 100vh;
+  position: relative;
+}
+
+.container .hanger {
+  width: 60%;
+  border-left: 8px solid gold;
+  border-right: 8px solid gold;
+  height: 50%;
+  position: absolute;
+  left: 20%;
+  border-radius: 0;
+  z-index: 2;
+}
+
+.container .mainArea {
+  z-index: 2;
+  width: 90%;
+  overflow: hidden;
+  -webkit-animation-name: slideIn;
+          animation-name: slideIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  position: absolute;
+  left: 50%;
+  padding: 50px 120px 50px 50px;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: wheat;
+  background-color: rgba(245, 222, 179, 0.8);
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 20px;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+}
+
+.container .mainArea > img {
+  position: absolute;
+  -webkit-animation: swinging 3.5s ease-in-out forwards infinite;
+          animation: swinging 3.5s ease-in-out forwards infinite;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  right: -50px;
+  top: -10px;
+  width: 200px;
+}
+
+.container .mainArea .mainPic img {
+  width: 100%;
+}
+
+.container .mainArea .detail {
+  background-color: #9d0315;
+  height: auto;
+}
+
+.container .mainArea .detail h2 {
+  color: white;
+  text-align: center;
+  font-size: 2.5em;
+  padding-top: 5%;
+  min-height: 200px;
+}
+
+.container .mainArea .detail .specs {
+  border-top: 1px gold solid;
+  border-radius: 0;
+  width: 90%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 10px;
+}
+
+.container .mainArea .detail .specs * {
+  margin: 20px 0;
+  font-size: 1.5em;
+}
+
+.container .mainArea .detail .specs .spice {
+  color: red;
+  border-radius: 0;
+  border: 0;
+  background-color: wheat;
+  text-align: center;
+}
+
+.container .mainArea .detail .specs .count {
+  color: gold;
+  text-align: center;
+}
+
+.container .mainArea .detail .specs .price {
+  color: gold;
+  text-align: center;
+  display: block;
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    max-height: 0%;
+  }
+  100% {
+    max-height: 80%;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    max-height: 0%;
+  }
+  100% {
+    max-height: 80%;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes swinging {
+  0% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  50% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+
+@keyframes swinging {
+  0% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  50% {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+/*# sourceMappingURL=MealDetail.css.map */

@@ -10,7 +10,7 @@
   form {
     animation-name: fadein;
     animation-duration: 1s;
-    opacity: 0.9;
+    opacity: 0.95;
     width: 80%;
     max-width: 500px;
     position: absolute;
@@ -69,6 +69,6 @@
     opacity: 0;
   }
   to {
-    opacity: 0.9;
+    opacity: 0.95;
   }
 }
