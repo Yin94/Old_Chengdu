@@ -5,36 +5,48 @@
   margin: auto;
   background-color: #af191c;
   display: grid;
-  grid-gap: 20px 0;
-  grid-template-areas: 'image image' 'rating orders' 'name name';
+
+  grid-template-areas: 'image image' 'name name' 'rating rating';
   * {
-    color: white;
+    color: green;
+    text-align: center;
   }
-  img {
-    margin-top: 10px;
+  > img {
+    margin: 15px 0 20px 0;
     grid-area: image;
     width: 100%;
-
     border-radius: 0;
     cursor: pointer;
   }
-  strong {
-    font-weight: bold;
-    small {
-      font-weight: normal;
+  .spicePanel {
+    border: 1px solid #af191c;
+    border-top: 0;
+    // background-color: rgba(255, 215, 0, 0.8);
+    background-color: wheat;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 85%;
+    grid-area: rating;
+    display: grid;
+    border-radius: 0 0 4px 4px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    img {
+      width: 100%;
+      display: block;
     }
   }
-  strong:first-child {
-    grid-area: rating;
-  }
-  strong:last-child {
-    grid-area: orders;
-  }
+
   p {
+    border: 1px solid #af191c;
+    border-bottom: 1px solid green;
+    padding-bottom: 10px;
+    width: 85%;
+    margin: auto;
+    border-radius: 4px 4px 0 0;
     text-align: center;
+    background-color: wheat;
     grid-area: name;
     font-size: 1.8em;
-    padding-bottom: 20px;
     cursor: pointer;
   }
 }

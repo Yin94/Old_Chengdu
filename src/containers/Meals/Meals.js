@@ -10,14 +10,16 @@ export default class Meals extends Component {
       <div className={classes.container}>
         <section className={classes.main}>
           <img
-            src='http://www.laochengnan.com/manage/Public/Edit/uploadfile/20170724/20170724180159510.png'
+            src='http://www.happypandatx.com/wp-content/uploads/2017/12/happypanda_logo.png'
             alt=''
           />
           <img
+            className={classes.panda}
             src='https://dejpknyizje2n.cloudfront.net/marketplace/products/cute-panda-icon-sticker-1539641331.8735018.png'
             alt=''
           />
           <img
+            className={classes.panda}
             src='https://cdn3.iconfinder.com/data/icons/spa-flat-colorful/614/4600_-_Bamboo_Stick-512.png'
             alt=''
           />

@@ -5,16 +5,16 @@
   background-color: #af191c;
   display: -ms-grid;
   display: grid;
-  grid-gap: 20px 0;
-      grid-template-areas: 'image image' 'rating orders' 'name name';
+      grid-template-areas: 'image image' 'name name' 'rating rating';
 }
 
 .container * {
-  color: white;
+  color: green;
+  text-align: center;
 }
 
-.container img {
-  margin-top: 10px;
+.container > img {
+  margin: 15px 0 20px 0;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -24,34 +24,43 @@
   cursor: pointer;
 }
 
-.container strong {
-  font-weight: bold;
-}
-
-.container strong small {
-  font-weight: normal;
-}
-
-.container strong:first-child {
-  -ms-grid-row: 2;
+.container .spicePanel {
+  border: 1px solid #af191c;
+  border-top: 0;
+  background-color: wheat;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 85%;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: rating;
+  display: -ms-grid;
+  display: grid;
+  border-radius: 0 0 4px 4px;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.container strong:last-child {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: orders;
+.container .spicePanel img {
+  width: 100%;
+  display: block;
 }
 
 .container p {
+  border: 1px solid #af191c;
+  border-bottom: 1px solid green;
+  padding-bottom: 10px;
+  width: 85%;
+  margin: auto;
+  border-radius: 4px 4px 0 0;
   text-align: center;
-  -ms-grid-row: 3;
+  background-color: wheat;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: name;
   font-size: 1.8em;
-  padding-bottom: 20px;
   cursor: pointer;
 }
 /*# sourceMappingURL=MealItem.css.map */

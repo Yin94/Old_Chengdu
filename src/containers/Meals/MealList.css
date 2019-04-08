@@ -3,28 +3,33 @@
   height: 100vh;
   background-size: contain;
   overflow: auto;
-  background-image: url("../../assets/images/MealList/bg1.jpg");
+  background-image: url('http://bpic.588ku.com/back_pic/05/55/81/035b161b2c96b6d.jpg');
   background-repeat: repeat;
 }
 
 .container .main {
   -webkit-animation: fadeIn 2s;
-          animation: fadeIn 2s;
+  animation: fadeIn 2s;
   border-radius: 0;
-  width: 70%;
-  padding: 10px 40px 100px 40px;
-  margin: 50px auto;
+  width: 95%;
+  padding: 0 5% 100px 5%;
+  margin: 0 auto;
   position: relative;
   background-color: rgba(245, 222, 179, 0.8);
 }
 
-.container .main > img {
-  position: relative;
+.container .main > .panda {
+  position: absolute;
   width: 10%;
-  right: -63%;
-  top: 0;
+  right: 5%;
+  top: 100px;
   display: inline-block;
   padding-bottom: 10px;
+}
+
+.container .main > .panda:nth-child(3) {
+  top: 110px;
+  right: 5.2%;
 }
 
 .container .main > img:first-child {
@@ -38,8 +43,8 @@
 .container .main div[id='mealList'] {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
 }
 
@@ -62,23 +67,65 @@
 }
 
 @media only screen and (max-width: 1600px) {
+  .container .main > .panda {
+    top: 70px;
+  }
+  .container .main > .panda:nth-child(3) {
+    top: 80px;
+  }
+  .container .main div[id='mealList'] {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .container .main > .panda {
+    top: 50px;
+  }
+  .container .main > .panda:nth-child(3) {
+    top: 60px;
+  }
   .container .main div[id='mealList'] {
     -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media only screen and (max-width: 800px) {
+  .container .main > .panda {
+    top: 30px;
+    width: 20%;
+  }
+  .container .main > .panda:nth-child(3) {
+    top: 40px;
+  }
+  .container .main > img:first-child {
+    width: 40%;
+  }
   .container .main div[id='mealList'] {
     -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media only screen and (max-width: 400px) {
+  .container .main {
+    padding: 0 5%;
+  }
+  .container .main > img:first-child {
+    width: 40%;
+  }
+  .container .main > .panda {
+    top: 20px;
+    width: 20%;
+  }
+  .container .main > .panda:nth-child(3) {
+    top: 30px;
+  }
   .container .main div[id='mealList'] {
     -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 /*# sourceMappingURL=MealList.css.map */
