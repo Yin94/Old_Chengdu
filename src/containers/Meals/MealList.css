@@ -3,13 +3,14 @@
   height: 100vh;
   background-size: contain;
   overflow: auto;
-  background-image: url('http://bpic.588ku.com/back_pic/05/55/81/035b161b2c96b6d.jpg');
+  background-size: contain;
+  background-image: url("http://bpic.588ku.com/back_pic/05/55/81/035b161b2c96b6d.jpg");
   background-repeat: repeat;
 }
 
 .container .main {
   -webkit-animation: fadeIn 2s;
-  animation: fadeIn 2s;
+          animation: fadeIn 2s;
   border-radius: 0;
   width: 95%;
   padding: 0 5% 100px 5%;
@@ -44,7 +45,7 @@
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
 }
 
@@ -75,7 +76,7 @@
   }
   .container .main div[id='mealList'] {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -88,7 +89,7 @@
   }
   .container .main div[id='mealList'] {
     -ms-grid-columns: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -105,7 +106,7 @@
   }
   .container .main div[id='mealList'] {
     -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -125,7 +126,7 @@
   }
   .container .main div[id='mealList'] {
     -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 /*# sourceMappingURL=MealList.css.map */

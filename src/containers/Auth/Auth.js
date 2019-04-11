@@ -4,18 +4,21 @@ import classes from './Auth.css';
 import { NavLink, withRouter } from 'react-router-dom';
 import { loginSchema, signupSchema } from './schemas/schemas';
 import { signUpWithEmail, signInWithEmail } from '../../db/auth';
+import Spinner from '../../UI/Spinner/Spinner';
 import ErrorBlock from '../../UI/ErrorBlock/ErrorBlock';
 import Joi from 'joi';
 import { connect } from 'react-redux';
-import { SET_AUTH_DATA } from '../../store_redux/auth/auth';
+import { SET_AUTH_DATA, SET_LOADING } from '../../store_redux/auth/auth';
 import { Redirect } from 'react-router-dom';
 const mps = state => ({
-  token: state.auth.token
+  token: state.auth.token,
+  loading: state.auth.loading
 });
 const mpd = dispatch => ({
   setAuth: data => {
     dispatch({ type: SET_AUTH_DATA, data });
-  }
+  },
+  setLoading: () => dispatch({ type: SET_LOADING })
 });
 export default connect(
   mps,
@@ -40,6 +43,7 @@ export default connect(
         }
       };
       onSubmitHandler = async e => {
+        this.props.setLoading();
         e.preventDefault();
         this.onRestErrHandler();
         const { email, password, ...others } = this.state.formControls;
@@ -155,6 +159,12 @@ export default connect(
         return (
           <>
             {this.props.token && <Redirect to='/menu' />}
+            {this.props.loading && (
+              <div className={classes.loadingModal}>
+                <Spinner />
+              </div>
+            )}
+
             <div className={classes.container}>
               <form onSubmit={this.onSubmitHandler} ref={this.formRef}>
                 <ul>

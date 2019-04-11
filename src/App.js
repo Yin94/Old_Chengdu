@@ -5,7 +5,7 @@ import NavBar from './containers/NavBar/NavBar';
 import MealDetail from './containers/MealDetail/MealDetail';
 import './App.css';
 import { Route, Redirect, Switch } from 'react-router-dom';
-import Cart from './components/CartStrip/Cart';
+import Cart from './containers/Cart/Cart';
 import { SET_AUTH_DATA } from './store_redux/auth/auth';
 import { connect } from 'react-redux';
 class App extends Component {
@@ -23,6 +23,7 @@ class App extends Component {
       <div id='app'>
         {this.state.isStart && <Redirect to='/auth/1' />}
         <NavBar />
+
         <Switch>
           <Route path='/menu' component={Meals} />
           <Route path='/auth/:mode' component={Auth} />
