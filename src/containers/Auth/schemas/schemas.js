@@ -37,5 +37,14 @@ export const signupSchema = {
       const err = new Error('Username must between 5 and 20 characters.');
       err.origin = 'userName';
       return err;
+    }),
+  phone: Joi.string()
+    .min(10)
+    .max(10)
+    .regex(/^(0|[1-9][0-9]*)$/)
+    .error(() => {
+      const err = new Error('Please input 10 digits phone number!');
+      err.origin = 'phone';
+      return err;
     })
 };

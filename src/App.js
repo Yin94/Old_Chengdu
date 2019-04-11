@@ -6,20 +6,22 @@ import MealDetail from './containers/MealDetail/MealDetail';
 import './App.css';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Cart from './components/CartStrip/Cart';
-
+import { SET_AUTH_DATA } from './store_redux/auth/auth';
+import { connect } from 'react-redux';
 class App extends Component {
   state = {
     isStart: true
   };
   componentDidMount = () => {
     this.setState({ isStart: false });
+    const authed = localStorage.getItem('auth');
+    if (authed) this.props.setAuth(JSON.parse(authed));
   };
 
   render() {
     return (
       <div id='app'>
-        {/* {this.state.isStart && <Redirect to='/auth/1' />} */}
-
+        {this.state.isStart && <Redirect to='/auth/1' />}
         <NavBar />
         <Switch>
           <Route path='/menu' component={Meals} />
@@ -33,5 +35,12 @@ class App extends Component {
     );
   }
 }
-
-export default App;
+const mpd = dispatch => ({
+  setAuth: data => {
+    dispatch({ type: SET_AUTH_DATA, data });
+  }
+});
+export default connect(
+  null,
+  mpd
+)(App);
