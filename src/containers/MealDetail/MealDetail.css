@@ -86,17 +86,9 @@
   margin-bottom: 10px;
 }
 
-.container .mainArea .detail .specs * {
+.container .mainArea .detail .specs > * {
   margin: 20px 0;
   font-size: 1.5em;
-}
-
-.container .mainArea .detail .specs .spice {
-  color: red;
-  border-radius: 0;
-  border: 0;
-  background-color: wheat;
-  text-align: center;
 }
 
 .container .mainArea .detail .specs .count {

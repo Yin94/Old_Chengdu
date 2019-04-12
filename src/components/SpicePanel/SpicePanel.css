@@ -1,0 +1,17 @@
+.spicePanel {
+  border: 1px solid #af191c;
+  border-top: 0;
+  background-color: wheat;
+  margin: 0 auto;
+  width: 100%;
+  grid-area: rating;
+  display: grid;
+  border-radius: 0 0 4px 4px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.spicePanel img {
+  margin: 0;
+  width: 100%;
+  display: block;
+  max-width: 70px;
+}

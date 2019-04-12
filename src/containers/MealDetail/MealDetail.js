@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './MealDetail.css';
 import Button from '../../UI/Button/Button';
+import SpicePanel from '../../components/SpicePanel/SpicePanel';
 import {
   startQueryMeal,
   startAddToBasket
@@ -55,9 +56,9 @@ export default connect(
               <div className={classes.detail}>
                 <h2>{meal.name}</h2>
                 <div className={classes.specs}>
-                  <p className={classes.spice}>spice rate:{meal.spiceDegree}</p>
+                  <SpicePanel spiceDegree={5} />
                   <p className={classes.count}>
-                    monthly sales: {meal.monthlyCount}
+                    monthly sales: {meal.monthlySaleCount}
                   </p>
                   <strong className={classes.price}>
                     Price: {meal.price}$
