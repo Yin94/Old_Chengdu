@@ -3,7 +3,6 @@
   height: 100vh;
   background-size: contain;
   overflow: auto;
-  background-size: contain;
   background-image: url("http://bpic.588ku.com/back_pic/05/55/81/035b161b2c96b6d.jpg");
   background-repeat: repeat;
 }
@@ -157,14 +156,16 @@
     padding-bottom: 100px;
   }
   .container .main .searchBar {
+    position: static;
     width: 100%;
     padding: 20px 0;
   }
-  .container .main .searchBar * {
-    font-size: 1em;
+  .container .main .searchBar input {
+    font-size: 0.8em;
   }
   .container .main .searchBar button {
-    padding: 5px;
+    font-size: 1em;
+    padding: 0;
   }
   .container .main > .panda {
     top: 10px;

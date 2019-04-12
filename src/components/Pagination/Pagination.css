@@ -1,0 +1,17 @@
+.pagiPanel {
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.pagiPanel button {
+  width: 10%;
+  /* max-width: 40%; */
+}
+.pagiPanel button:disabled {
+  background-color: #fff;
+}
+.pagiPanel > startNend {
+  width: 7%;
+}

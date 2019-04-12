@@ -4,11 +4,21 @@ import { addListItem } from '../../db/basket';
 const initialState = {
   list: [],
   cur: {},
+  totalCount: 0,
   error: false,
-  loading: false
+  pageIndex: 0,
+  succeed: false,
+  loading: false,
+  firstSearch: true
 };
-function setList(state, list) {
-  return combine(state, { list, error: false, loading: false });
+function setList(state, list, pageIndex) {
+  return combine(state, {
+    list,
+    error: false,
+    succeed: true,
+    loading: false,
+    pageIndex
+  });
 }
 
 function loading(state) {
@@ -20,10 +30,13 @@ function error(state) {
 function setCurrent(state, cur) {
   return combine(state, { cur }, { error: false, loading: false });
 }
+function setCount(state, totalCount) {
+  return combine(state, { totalCount, error: false, loading: false });
+}
 export default function(state = initialState, action) {
   switch (action.type) {
     case SET_LIST:
-      return setList(state, action.list);
+      return setList(state, action.list, action.pageIndex);
 
     case SET_LOADING:
       return loading(state);
@@ -31,6 +44,8 @@ export default function(state = initialState, action) {
       return error(state);
     case SET_CURRENT:
       return setCurrent(state, action.meal);
+    case SET_COUNT:
+      return setCount(state, action.totalCount);
     default:
       return state;
   }
@@ -40,14 +55,18 @@ const SET_LIST = 'meals/SET_LIST';
 const SET_LOADING = 'meals/SET_LOADING';
 const ERROR_LIST = 'meals/ERROR_LIST';
 const SET_CURRENT = 'meals/SET_CURRENT';
+const SET_COUNT = 'meals/SET_COUNT';
 //
-export function startFetchList(query) {
+export function startFetchList(pageIndex, query, firstSearch = true) {
   return async dispatch => {
     dispatch({ type: SET_LOADING });
-
-    const list = await fetchList(query);
+    if (firstSearch) {
+      const totalCount = await fetchList(1, 0, query);
+      dispatch({ type: SET_COUNT, totalCount });
+    }
+    const list = await fetchList(0, pageIndex, query);
     if (list instanceof Error) dispatch({ type: ERROR_LIST });
-    else dispatch({ type: SET_LIST, list });
+    else dispatch({ type: SET_LIST, list, pageIndex });
   };
 }
 
@@ -61,7 +80,6 @@ export function startQueryMeal(id) {
 
 export function startAddToBasket(id, count, token) {
   return async dispatch => {
-    const result = await addListItem(id, count, token);
-    console.log(result);
+    await addListItem(id, count, token);
   };
 }

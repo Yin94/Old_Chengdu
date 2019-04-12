@@ -2,14 +2,20 @@ import React, { Component, createRef } from 'react';
 import classes from './MealList.css';
 import MealList from './MealList/MealList';
 import { connect } from 'react-redux';
+import Pagination from '../../components/Pagination/Pagination';
 import { startFetchList } from '../../store_redux/meals/meals';
 
 const mps = state => ({
-  list: state.meals.list
+  list: state.meals.list,
+  firstSearch: state.meals.firstSearch,
+  currentPage: state.meals.pageIndex + 1,
+  totalCount: state.meals.totalCount,
+  error: state.meals.error,
+  succeed: state.meals.succeed
 });
 const mpd = dispatch => ({
-  fetchList: query => {
-    dispatch(startFetchList(query));
+  fetchList: (pageIndex, query, firstSearch) => {
+    dispatch(startFetchList(pageIndex, query, firstSearch));
   }
 });
 export default connect(
@@ -24,14 +30,20 @@ export default connect(
     onSearchHandler = e => {
       if (e.target.name === 'searchBtn' || e.keyCode === 13) {
         const query = this.searchRef.current.value;
-        this.props.fetchList(query);
+        this.props.fetchList(0, query, true);
       }
     };
+    onPageNavHandler = index => {
+      const query = this.searchRef.current.value;
+
+      this.props.fetchList(index - 1, query);
+    };
     componentDidMount() {
-      this.props.fetchList();
+      this.props.fetchList(0, null, true);
     }
 
     render() {
+      if (!this.props.succeed) return <div />;
       return (
         <div className={classes.container}>
           <section className={classes.main}>
@@ -60,6 +72,11 @@ export default connect(
               </button>
             </div>
             <MealList list={this.props.list} onClick={this.onSelectHandler} />
+            <Pagination
+              totalCount={this.props.totalCount}
+              pageSelected={this.onPageNavHandler}
+              currentPage={this.props.currentPage}
+            />
           </section>
         </div>
       );

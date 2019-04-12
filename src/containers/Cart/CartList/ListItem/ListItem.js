@@ -6,6 +6,8 @@ export default function ListItem({ item, deleteItem }) {
       <p>
         <strong>{item.meal.name}</strong> <span>{item.meal.chineseName}</span>
         <small>{`count: ${item.count}`}</small>
+        <small style={{ color: 'green' }}>{`${item.meal.price *
+          item.count}$`}</small>
         <Link to='#' onClick={() => deleteItem(item.id)}>
           delete
         </Link>

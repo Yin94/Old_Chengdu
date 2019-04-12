@@ -3,7 +3,6 @@
   height: 100vh;
   background-size: contain;
   overflow: auto;
-  background-size: contain;
   background-image: url('http://bpic.588ku.com/back_pic/05/55/81/035b161b2c96b6d.jpg');
   background-repeat: repeat;
   .main {
@@ -150,13 +149,15 @@
     .main {
       padding-bottom: 100px;
       .searchBar {
+        position: static;
         width: 100%;
         padding: 20px 0;
-        * {
-          font-size: 1em;
+        input {
+          font-size: 0.8em;
         }
         button {
-          padding: 5px;
+          font-size: 1em;
+          padding: 0;
         }
       }
       > .panda {

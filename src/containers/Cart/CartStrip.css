@@ -1,38 +1,47 @@
 .withBg {
   width: 100%;
   height: 100vh;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  overflow: auto;
   background-image: url("https://thewallpaper.co/wp-content/uploads/2016/03/restaurant-wide-high-resolution-wallpaper-free-colors-wallpapers-for-large-screens-display-1920x1200.jpg");
+  background-repeat: repeat;
 }
 
 .container {
   -webkit-animation: fadeIn 1s;
           animation: fadeIn 1s;
   width: 80%;
-  overflow: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  min-height: 100vh;
+  margin: 0 auto;
   background-color: rgba(211, 211, 211, 0.8);
   border-radius: 0;
 }
 
 .container > div {
-  padding: 100px 0;
+  padding: 10% 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2fr 1fr;
       grid-template-columns: 2fr 1fr;
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 
 .container > div .list {
   background-color: #e5001c;
   padding: 25px 50px 25px 0;
+}
+
+.container > div .list .total {
+  color: white;
+  font-size: 2em;
+  padding-top: 30px;
+  float: right;
+  display: block;
+}
+
+.container > div .list .total small {
+  color: wheat;
 }
 
 .container > div .list div {
@@ -62,6 +71,7 @@
 
 .container > div .list div p small {
   font-size: 1.2em;
+  padding: 0 20px;
   font-weight: normal;
 }
 
@@ -88,7 +98,6 @@
 .container > div .desc button {
   margin: 30px auto;
   width: 80%;
-  display: block;
   font-size: 1.5em;
   background-color: #e5001c;
   color: gold;
@@ -127,6 +136,89 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .container > div {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .container > div .desc {
+    width: 80%;
+    margin: auto;
+  }
+  .container > div .desc img {
+    max-width: 50%;
+    float: left;
+  }
+  .container > div .desc button {
+    float: right;
+    margin-left: 20px;
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container > div {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .container > div .desc {
+    width: 80%;
+    margin: auto;
+  }
+  .container > div .desc img {
+    max-width: 50%;
+    float: left;
+  }
+  .container > div .desc button {
+    float: right;
+    font-size: 1.2em;
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container > div {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .container > div .list {
+    padding-right: 10px;
+  }
+  .container > div .list div p strong {
+    font-size: 10px;
+    padding: 0 3px;
+    margin: 0;
+  }
+  .container > div .list div p span {
+    font-size: 10px;
+    padding: 0 3px;
+    margin: 0;
+  }
+  .container > div .list div p small {
+    font-size: 10px;
+    padding: 0 3px;
+    margin: 0;
+  }
+  .container > div .list div p a {
+    font-size: 10px;
+    padding: 0 3px;
+    margin: 0;
+  }
+  .container > div .desc {
+    width: 80%;
+    margin: auto;
+  }
+  .container > div .desc img {
+    max-width: 50%;
+    float: left;
+  }
+  .container > div .desc button {
+    float: none;
+    font-size: 1.2em;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=CartStrip.css.map */

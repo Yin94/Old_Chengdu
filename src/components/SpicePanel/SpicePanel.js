@@ -12,7 +12,7 @@ export default function SpicePanel({ spiceDegree, classInput }) {
       </div>
     );
   }
-  console.log(classInput);
+
   if (classInput) return <div className={classInput}>{spiceList}</div>;
   else return <div className={classes.spicePanel}>{spiceList}</div>;
 }

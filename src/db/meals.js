@@ -1,17 +1,21 @@
 import httpClient from './axios';
-
-export async function fetchList(query) {
+import PAGE_CAP from '../utility/page_cap';
+export async function fetchList(mode, pageIndex, query) {
+  let result;
+  let url = `meals?pageIndex=${pageIndex}&pageSize=${PAGE_CAP}&mode=${mode}`;
+  if (query) {
+    url += `&query=${query}`;
+  }
   try {
-    let result;
-    if (query === undefined) result = await httpClient.get(`meals`);
-    else result = await httpClient.get(`meals?query=${query}`);
+    result = await httpClient.get(url);
+    if (mode) return result.data.count;
+    //
     const meals = [...result.data];
     meals.forEach(ele => {
       const id = ele._id;
       ele.id = id;
       delete ele._id;
     });
-
     return meals;
   } catch (error) {
     console.log(error.message);

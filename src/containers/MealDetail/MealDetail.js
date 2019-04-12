@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import classes from './MealDetail.css';
 import Button from '../../UI/Button/Button';
 import SpicePanel from '../../components/SpicePanel/SpicePanel';
@@ -26,14 +26,23 @@ export default connect(
   mpd
 )(
   class MealDetail extends Component {
+    state = {
+      count: 1
+    };
+    countRef = createRef();
     componentDidMount() {
       if (this.props.currentMeal === {}) return;
       const id = this.props.match.params.id;
       this.props.fetchMeal(id);
     }
+
     onAddHandler = (id, count) => {
       const token = this.props.token;
       this.props.addToBasket(id, count, token);
+    };
+    onSelectHandler = e => {
+      const count = e.target.value;
+      this.setState({ count });
     };
     render() {
       const meal = this.props.currentMeal;
@@ -57,12 +66,29 @@ export default connect(
                 <h2>{meal.name}</h2>
                 <div className={classes.specs}>
                   <SpicePanel spiceDegree={5} />
-                  <p className={classes.count}>
+                  <p className={classes.MonthlyCount}>
                     monthly sales: {meal.monthlySaleCount}
                   </p>
                   <strong className={classes.price}>
                     Price: {meal.price}$
                   </strong>
+                  <div className={classes.selectPanel}>
+                    <small>Count:</small>
+                    <select
+                      value={this.state.count}
+                      onChange={this.onSelectHandler}>
+                      <option value={1}>1</option>
+                      <option value={2}>2</option>
+                      <option value={3}>3</option>
+                      <option value={4}>4</option>
+                      <option value={5}>5</option>
+                      <option value={6}>6</option>
+                      <option value={7}>7</option>
+                      <option value={8}>8</option>
+                      <option value={9}>9</option>
+                      <option value={10}>10</option>
+                    </select>
+                  </div>
                   <Button
                     style={{
                       gridArea: 'btn',
@@ -75,7 +101,9 @@ export default connect(
                       fontSize: '1.2em',
                       backgroundColor: 'green'
                     }}
-                    onClick={() => this.onAddHandler(meal.id, 3)}>
+                    onClick={() =>
+                      this.onAddHandler(meal.id, this.state.count)
+                    }>
                     Add to Basket
                   </Button>
                 </div>

@@ -35,22 +35,27 @@ export default connect(
       this.props.deleteItem(id, this.props.token);
     };
     render() {
+      const list = this.props.list;
+      const total = list.reduce(
+        (prev, current) => prev + current.meal.price * current.count,
+        0
+      );
       return (
         <div className={classes.withBg}>
           <div className={classes.container}>
             <div>
               <div className={classes.list}>
-                <CartList
-                  list={this.props.list}
-                  deleteItem={this.onDeleteHandler}
-                />
+                <CartList list={list} deleteItem={this.onDeleteHandler} />
+                <strong className={classes.total}>
+                  <small>Total</small>: {total}
+                </strong>
               </div>
               <div className={classes.desc}>
                 <img
                   src='http://www.happypandatx.com/wp-content/uploads/2017/12/happypanda_logo.png'
                   alt=''
                 />
-                <Button>Order Now</Button>
+                <Button btn>Order Now</Button>
               </div>
             </div>
           </div>

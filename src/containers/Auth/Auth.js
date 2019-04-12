@@ -230,6 +230,7 @@ export default connect(
                 {signUpControls}
                 <div className={classes.btnGroup}>
                   <Button
+                    btn
                     style={{
                       backgroundColor: 'green',
                       width: '50%',
