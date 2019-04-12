@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  height: auto;
+  height: 500px;
   margin: auto;
   background-color: #af191c;
   display: -ms-grid;
@@ -20,7 +20,9 @@
   -ms-grid-column-span: 2;
   grid-area: image;
   width: 100%;
+  height: 250px;
   border-radius: 0;
+  max-height: 250px;
   cursor: pointer;
 }
 
@@ -28,7 +30,7 @@
   border: 1px solid #af191c;
   border-top: 0;
   background-color: wheat;
-  margin: auto;
+  margin: 0 auto;
   margin-bottom: 20px;
   width: 85%;
   -ms-grid-row: 3;
@@ -47,20 +49,35 @@
   display: block;
 }
 
-.container p {
+.container .namePanel {
   border: 1px solid #af191c;
-  border-bottom: 1px solid green;
-  padding-bottom: 10px;
-  width: 85%;
-  margin: auto;
-  border-radius: 4px 4px 0 0;
-  text-align: center;
-  background-color: wheat;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: name;
+  border-bottom: 1px solid green;
+  width: 85%;
+  margin: 0 auto;
+  background-color: wheat;
+  padding: 5px;
+  text-align: end;
+}
+
+.container .namePanel p {
+  border-radius: 4px 4px 0 0;
+  text-align: center;
   font-size: 1.8em;
+  width: 100%;
+  cursor: pointer;
+}
+
+.container .namePanel small {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 1.2em;
   cursor: pointer;
 }
 /*# sourceMappingURL=MealItem.css.map */

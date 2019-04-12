@@ -1,17 +1,9 @@
 import React from 'react';
 import classes from './MealItem.css';
 export default function MealItem({ item, onClick }) {
-  item = {
-    name: 'Mapo Tofu',
-    orderCount: 100,
-    rating: 4,
-    img:
-      'https://www.seriouseats.com/images/2014/08/20140625-chengdu-mapo-2.jpg',
-    id: 'asdadas'
-  };
-  const spiceRate = item.rating,
+  const spiceDegree = item.spiceDegree,
     spiceList = [];
-  for (let i = 0; i < spiceRate; i++) {
+  for (let i = 0; i < spiceDegree; i++) {
     spiceList.push(
       <div key={i}>
         <img
@@ -25,8 +17,10 @@ export default function MealItem({ item, onClick }) {
     <div className={classes.container}>
       <img src={item.img} alt='item.img' onClick={() => onClick(item.id)} />
       <div className={classes.spicePanel}>{spiceList}</div>
-
-      <p onClick={() => onClick(item.id)}>{item.name}</p>
+      <div className={classes.namePanel}>
+        <p onClick={() => onClick(item.id)}>{item.name}</p>
+        <small onClick={() => onClick(item.id)}>{item.chineseName}</small>
+      </div>
     </div>
   );
 }

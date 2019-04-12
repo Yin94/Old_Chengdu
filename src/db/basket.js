@@ -5,19 +5,23 @@ export async function fetchList(token) {
 
     return result.data;
   } catch (error) {
-    const status = error.response.status;
-    if (status === 403) return 3;
-    else return 0;
+    return error;
   }
 }
 
-export async function signInWithEmail(email, password) {
+export async function addListItem(mealId, count, token) {
   try {
-    const result = await httpClient.post('auth/signin', { email, password });
+    console.log(token);
+    console.log(mealId, count);
+
+    const result = await httpClient.post(
+      'cart',
+      { mealId, count },
+      { headers: { token } }
+    );
+
     return result.data;
   } catch (error) {
-    const status = error.response.status;
-    if (status === 401) return 1;
-    if (status === 403) return 2;
+    return error;
   }
 }

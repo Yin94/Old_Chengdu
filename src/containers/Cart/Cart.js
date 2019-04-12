@@ -5,7 +5,8 @@ import CartList from './CartList/CartList';
 import { connect } from 'react-redux';
 import { startFetchList } from '../../store_redux/basket/basket';
 const mps = state => ({
-  token: state.auth.token
+  token: state.auth.token,
+  list: state.basket.list
 });
 const mpd = dispatch => ({
   fetchList: token => {
@@ -18,7 +19,11 @@ export default connect(
 )(
   class extends React.Component {
     componentDidMount() {
-      this.props.fetchList(this.props.token);
+      this.props.token
+        ? this.props.fetchList(this.props.token)
+        : this.props.fetchList(
+            JSON.parse(localStorage.getItem('auth'))['token']
+          );
     }
 
     render() {
@@ -27,7 +32,7 @@ export default connect(
           <div className={classes.container}>
             <div>
               <div className={classes.list}>
-                <CartList />
+                <CartList list={this.props.list} />
               </div>
               <div className={classes.desc}>
                 <img

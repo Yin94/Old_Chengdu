@@ -1,7 +1,6 @@
 .container {
   width: 100%;
-  height: auto;
-
+  height: 500px;
   margin: auto;
   background-color: #af191c;
   display: grid;
@@ -15,15 +14,17 @@
     margin: 15px 0 20px 0;
     grid-area: image;
     width: 100%;
+    height: 250px;
     border-radius: 0;
+    max-height: 250px;
+
     cursor: pointer;
   }
   .spicePanel {
     border: 1px solid #af191c;
     border-top: 0;
-    // background-color: rgba(255, 215, 0, 0.8);
     background-color: wheat;
-    margin: auto;
+    margin: 0 auto;
     margin-bottom: 20px;
     width: 85%;
     grid-area: rating;
@@ -35,18 +36,32 @@
       display: block;
     }
   }
-
-  p {
+  .namePanel {
     border: 1px solid #af191c;
-    border-bottom: 1px solid green;
-    padding-bottom: 10px;
-    width: 85%;
-    margin: auto;
-    border-radius: 4px 4px 0 0;
-    text-align: center;
-    background-color: wheat;
+
     grid-area: name;
-    font-size: 1.8em;
-    cursor: pointer;
+    border-bottom: 1px solid green;
+    width: 85%;
+    margin: 0 auto;
+    background-color: wheat;
+    padding: 5px;
+    text-align: end;
+    p {
+      border-radius: 4px 4px 0 0;
+      text-align: center;
+
+      font-size: 1.8em;
+      width: 100%;
+      cursor: pointer;
+    }
+    small {
+      width: 100%;
+      display: block;
+      border-radius: 0;
+      text-align: center;
+      padding: 5px 0;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
   }
 }

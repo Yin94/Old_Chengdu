@@ -36,10 +36,14 @@
           animation: slideIn 1s ease-out;
           border-radius: 0;
           padding: 20px;
-          background-color: white;
+          background-color: wheat;
           strong {
-            font-size: 25px;
+            font-size: 20px;
             font-weight: bold;
+          }
+          span {
+            padding: 0 10px;
+            font-size: 15px;
           }
           small {
             font-size: 1.2em;

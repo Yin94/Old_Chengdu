@@ -14,6 +14,9 @@ function LOGOUT(state) {
 function loading(state) {
   return combine(state, { loading: true });
 }
+function error(state) {
+  return combine(state, { error: true });
+}
 export default function(state = initialState, action) {
   switch (action.type) {
     case SET_LIST:
@@ -22,6 +25,8 @@ export default function(state = initialState, action) {
       return LOGOUT(state);
     case SET_LOADING:
       return loading(state);
+    case ERROR_LIST:
+      return error(state);
     default:
       return state;
   }
@@ -30,12 +35,14 @@ export default function(state = initialState, action) {
 const SET_LIST = 'basket/SET_LIST';
 const LOG_OUT = 'basket/LOG_OUT';
 const SET_LOADING = 'basket/SET_LOADING';
+const ERROR_LIST = 'basket/ERROR_LIST';
 //
 export function startFetchList(token) {
   return async dispatch => {
     dispatch({ type: SET_LOADING });
     if (!token) token = JSON.parse(localStorage.getItem('auth')).token;
     const list = await fetchList(token);
-    dispatch({ type: SET_LIST, list });
+    if (list instanceof Error) dispatch({ type: ERROR_LIST });
+    else dispatch({ type: SET_LIST, list });
   };
 }

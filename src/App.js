@@ -21,7 +21,9 @@ class App extends Component {
   render() {
     return (
       <div id='app'>
-        {this.state.isStart && <Redirect to='/auth/1' />}
+        {this.state.isStart && !localStorage.getItem('auth') && (
+          <Redirect to='/auth/1' />
+        )}
         <NavBar />
 
         <Switch>
