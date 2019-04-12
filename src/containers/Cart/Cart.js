@@ -3,7 +3,10 @@ import classes from './CartStrip.css';
 import Button from '../../UI/Button/Button';
 import CartList from './CartList/CartList';
 import { connect } from 'react-redux';
-import { startFetchList } from '../../store_redux/basket/basket';
+import {
+  startFetchList,
+  startDeleteItem
+} from '../../store_redux/basket/basket';
 const mps = state => ({
   token: state.auth.token,
   list: state.basket.list
@@ -11,6 +14,9 @@ const mps = state => ({
 const mpd = dispatch => ({
   fetchList: token => {
     dispatch(startFetchList(token));
+  },
+  deleteItem: (id, token) => {
+    dispatch(startDeleteItem(id, token));
   }
 });
 export default connect(
@@ -25,14 +31,19 @@ export default connect(
             JSON.parse(localStorage.getItem('auth'))['token']
           );
     }
-
+    onDeleteHandler = id => {
+      this.props.deleteItem(id, this.props.token);
+    };
     render() {
       return (
         <div className={classes.withBg}>
           <div className={classes.container}>
             <div>
               <div className={classes.list}>
-                <CartList list={this.props.list} />
+                <CartList
+                  list={this.props.list}
+                  deleteItem={this.onDeleteHandler}
+                />
               </div>
               <div className={classes.desc}>
                 <img

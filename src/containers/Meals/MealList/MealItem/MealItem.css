@@ -80,4 +80,41 @@
   font-size: 1.2em;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 1600px) {
+  .container {
+    height: 450px;
+  }
+  .container > img {
+    height: 220px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    height: 430px;
+  }
+  .container > img {
+    height: 180px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    height: 400px;
+  }
+  .container > img {
+    height: 180px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    height: auto;
+  }
+  .container > img {
+    width: 100%;
+    height: auto;
+  }
+}
 /*# sourceMappingURL=MealItem.css.map */

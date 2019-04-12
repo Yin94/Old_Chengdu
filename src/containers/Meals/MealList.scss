@@ -3,7 +3,6 @@
   height: 100vh;
   background-size: contain;
   overflow: auto;
-
   background-size: contain;
   background-image: url('http://bpic.588ku.com/back_pic/05/55/81/035b161b2c96b6d.jpg');
   background-repeat: repeat;
@@ -12,16 +11,36 @@
     border-radius: 0;
     min-height: 100vh;
     width: 95%;
-
     padding: 0 5% 100px 5%;
     margin: 0 auto;
-
     position: relative;
     background-color: rgba(245, 222, 179, 0.8);
+    .searchBar {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      width: 50%;
+      transform: translate(-50%, 0);
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      padding: 20px 0;
+      * {
+        border: 0;
+      }
+      input {
+        border-radius: 4px 0 0 4px;
+      }
+      button {
+        font-size: 1.5em;
+        color: #ffff;
+        border-radius: 0 4px 4px 0;
 
+        background-color: #e5001c;
+      }
+    }
     > .panda {
       position: absolute;
-      width: 10%;
+      width: 5%;
       right: 5%;
       top: 100px;
       display: inline-block;
@@ -33,7 +52,7 @@
     }
     > img:first-child {
       position: relative;
-      width: 20%;
+      width: 10%;
       top: 0;
       left: 0;
       display: inline-block;
@@ -56,6 +75,9 @@
 @media only screen and (max-width: 1600px) {
   .container {
     .main {
+      .searchBar {
+        top: 10%;
+      }
       > .panda {
         top: 70px;
       }
@@ -71,6 +93,11 @@
 @media only screen and (max-width: 1200px) {
   .container {
     .main {
+      .searchBar {
+        top: 3%;
+        left: 55%;
+        width: 60%;
+      }
       > .panda {
         top: 50px;
       }
@@ -86,6 +113,17 @@
 @media only screen and (max-width: 800px) {
   .container {
     .main {
+      .searchBar {
+        position: static;
+        top: 0;
+        left: 0;
+        margin: auto;
+        width: 95%;
+        transform: (translate(0, 0));
+        button {
+          padding: 5px;
+        }
+      }
       > .panda {
         top: 30px;
         width: 20%;
@@ -106,6 +144,17 @@
 @media only screen and (max-width: 400px) {
   .container {
     .main {
+      padding-bottom: 100px;
+      .searchBar {
+        width: 100%;
+        padding: 10px 0;
+        * {
+          font-size: 1em;
+        }
+        button {
+          padding: 5px;
+        }
+      }
       > img:first-child {
         width: 40%;
       }
@@ -116,7 +165,7 @@
       > .panda:nth-child(3) {
         top: 30px;
       }
-      padding: 0 5%;
+
       div[id='mealList'] {
         grid-template-columns: 1fr;
       }

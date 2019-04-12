@@ -42,7 +42,10 @@ export default connect(
               src='https://cdn3.iconfinder.com/data/icons/spa-flat-colorful/614/4600_-_Bamboo_Stick-512.png'
               alt=''
             />
-
+            <div className={classes.searchBar}>
+              <input type='text' />
+              <button>search</button>
+            </div>
             <MealList list={this.props.list} onClick={this.onSelectHandler} />
           </section>
         </div>

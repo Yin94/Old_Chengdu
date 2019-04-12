@@ -11,9 +11,6 @@ export async function fetchList(token) {
 
 export async function addListItem(mealId, count, token) {
   try {
-    console.log(token);
-    console.log(mealId, count);
-
     const result = await httpClient.post(
       'cart',
       { mealId, count },
@@ -23,5 +20,15 @@ export async function addListItem(mealId, count, token) {
     return result.data;
   } catch (error) {
     return error;
+  }
+}
+
+export async function deleteItem(id, token) {
+  try {
+    console.log(id, token);
+    await httpClient.delete('cart/' + id, { headers: { token } });
+    return null;
+  } catch (error) {
+    return true;
   }
 }

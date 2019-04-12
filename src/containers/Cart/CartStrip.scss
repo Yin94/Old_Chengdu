@@ -20,7 +20,7 @@
   > div {
     padding: 100px 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     width: 80%;
     margin: auto;
     .list {
@@ -42,13 +42,22 @@
             font-weight: bold;
           }
           span {
-            padding: 0 10px;
-            font-size: 15px;
+            padding: 0 20px 0 0;
+            font-size: 12px;
           }
           small {
             font-size: 1.2em;
-            float: right;
             font-weight: normal;
+          }
+          a {
+            font-weight: bold;
+            float: right;
+            text-decoration: none;
+            color: #890011;
+            font-size: 1.2em;
+          }
+          a:hover {
+            color: white;
           }
         }
       }

@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './SpicePanel.css';
-export default function SpicePanel({ spiceDegree }) {
+export default function SpicePanel({ spiceDegree, classInput }) {
   const spiceList = [];
   for (let i = 0; i < spiceDegree; i++) {
     spiceList.push(
@@ -12,5 +12,7 @@ export default function SpicePanel({ spiceDegree }) {
       </div>
     );
   }
-  return <div className={classes.spicePanel}>{spiceList}</div>;
+  console.log(classInput);
+  if (classInput) return <div className={classInput}>{spiceList}</div>;
+  else return <div className={classes.spicePanel}>{spiceList}</div>;
 }

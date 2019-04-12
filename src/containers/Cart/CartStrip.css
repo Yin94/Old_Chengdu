@@ -24,8 +24,8 @@
   padding: 100px 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
   width: 80%;
   margin: auto;
 }
@@ -56,14 +56,25 @@
 }
 
 .container > div .list div p span {
-  padding: 0 10px;
-  font-size: 15px;
+  padding: 0 20px 0 0;
+  font-size: 12px;
 }
 
 .container > div .list div p small {
   font-size: 1.2em;
-  float: right;
   font-weight: normal;
+}
+
+.container > div .list div p a {
+  font-weight: bold;
+  float: right;
+  text-decoration: none;
+  color: #890011;
+  font-size: 1.2em;
+}
+
+.container > div .list div p a:hover {
+  color: white;
 }
 
 .container > div .desc {

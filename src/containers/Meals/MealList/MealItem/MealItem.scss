@@ -4,7 +4,6 @@
   margin: auto;
   background-color: #af191c;
   display: grid;
-
   grid-template-areas: 'image image' 'name name' 'rating rating';
   * {
     color: green;
@@ -38,7 +37,6 @@
   }
   .namePanel {
     border: 1px solid #af191c;
-
     grid-area: name;
     border-bottom: 1px solid green;
     width: 85%;
@@ -49,7 +47,6 @@
     p {
       border-radius: 4px 4px 0 0;
       text-align: center;
-
       font-size: 1.8em;
       width: 100%;
       cursor: pointer;
@@ -62,6 +59,41 @@
       padding: 5px 0;
       font-size: 1.2em;
       cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .container {
+    height: 450px;
+
+    > img {
+      height: 220px;
+    }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .container {
+    height: 430px;
+    > img {
+      height: 180px;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .container {
+    height: 400px;
+    > img {
+      height: 180px;
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  .container {
+    height: auto;
+    > img {
+      width: 100%;
+      height: auto;
     }
   }
 }

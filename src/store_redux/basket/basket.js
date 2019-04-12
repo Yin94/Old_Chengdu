@@ -1,5 +1,5 @@
 import combine from '../../utility/combine';
-import { fetchList } from '../../db/basket';
+import { fetchList, deleteItem } from '../../db/basket';
 const initialState = {
   list: [],
   error: false,
@@ -44,5 +44,13 @@ export function startFetchList(token) {
     const list = await fetchList(token);
     if (list instanceof Error) dispatch({ type: ERROR_LIST });
     else dispatch({ type: SET_LIST, list });
+  };
+}
+//
+export function startDeleteItem(id, token) {
+  return async dispatch => {
+    const err = await deleteItem(id, token);
+    if (err) dispatch({ type: ERROR_LIST });
+    else dispatch(startFetchList());
   };
 }
