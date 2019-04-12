@@ -36,10 +36,12 @@
 
 .container .main .searchBar * {
   border: 0;
+  padding: 10px;
 }
 
 .container .main .searchBar input {
   border-radius: 4px 0 0 4px;
+  font-size: 1.5em;
 }
 
 .container .main .searchBar button {
@@ -53,22 +55,23 @@
   position: absolute;
   width: 5%;
   right: 5%;
-  top: 100px;
+  top: 50px;
   display: inline-block;
   padding-bottom: 10px;
 }
 
 .container .main > .panda:nth-child(3) {
-  top: 110px;
+  top: 60px;
   right: 5.2%;
 }
 
 .container .main > img:first-child {
   position: relative;
   width: 10%;
-  top: 0;
+  top: 10px;
   left: 0;
   display: inline-block;
+  padding-bottom: 100px;
 }
 
 .container .main div[id='mealList'] {
@@ -101,12 +104,6 @@
   .container .main .searchBar {
     top: 10%;
   }
-  .container .main > .panda {
-    top: 70px;
-  }
-  .container .main > .panda:nth-child(3) {
-    top: 80px;
-  }
   .container .main div[id='mealList'] {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -118,12 +115,6 @@
     top: 3%;
     left: 55%;
     width: 60%;
-  }
-  .container .main > .panda {
-    top: 50px;
-  }
-  .container .main > .panda:nth-child(3) {
-    top: 60px;
   }
   .container .main div[id='mealList'] {
     -ms-grid-columns: 1fr 1fr 1fr;
@@ -145,14 +136,15 @@
     padding: 5px;
   }
   .container .main > .panda {
-    top: 30px;
-    width: 20%;
+    width: 10%;
+    top: 25px;
   }
   .container .main > .panda:nth-child(3) {
-    top: 40px;
+    top: 35px;
   }
   .container .main > img:first-child {
-    width: 40%;
+    width: 20%;
+    padding-bottom: 0;
   }
   .container .main div[id='mealList'] {
     -ms-grid-columns: 1fr 1fr;
@@ -166,7 +158,7 @@
   }
   .container .main .searchBar {
     width: 100%;
-    padding: 10px 0;
+    padding: 20px 0;
   }
   .container .main .searchBar * {
     font-size: 1em;
@@ -174,15 +166,17 @@
   .container .main .searchBar button {
     padding: 5px;
   }
-  .container .main > img:first-child {
-    width: 40%;
-  }
   .container .main > .panda {
-    top: 20px;
-    width: 20%;
+    top: 10px;
   }
   .container .main > .panda:nth-child(3) {
-    top: 30px;
+    top: 20px;
+  }
+  .container .main > img:first-child {
+    width: 20%;
+  }
+  .container .main > .panda {
+    width: 15%;
   }
   .container .main div[id='mealList'] {
     -ms-grid-columns: 1fr;

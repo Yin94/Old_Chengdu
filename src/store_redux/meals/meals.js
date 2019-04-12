@@ -41,11 +41,11 @@ const SET_LOADING = 'meals/SET_LOADING';
 const ERROR_LIST = 'meals/ERROR_LIST';
 const SET_CURRENT = 'meals/SET_CURRENT';
 //
-export function startFetchList(token) {
+export function startFetchList(query) {
   return async dispatch => {
     dispatch({ type: SET_LOADING });
-    if (!token) token = JSON.parse(localStorage.getItem('auth')).token;
-    const list = await fetchList(token);
+
+    const list = await fetchList(query);
     if (list instanceof Error) dispatch({ type: ERROR_LIST });
     else dispatch({ type: SET_LIST, list });
   };

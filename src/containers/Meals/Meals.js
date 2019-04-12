@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import classes from './MealList.css';
 import MealList from './MealList/MealList';
 import { connect } from 'react-redux';
@@ -8,8 +8,8 @@ const mps = state => ({
   list: state.meals.list
 });
 const mpd = dispatch => ({
-  fetchList: () => {
-    dispatch(startFetchList());
+  fetchList: query => {
+    dispatch(startFetchList(query));
   }
 });
 export default connect(
@@ -17,8 +17,15 @@ export default connect(
   mpd
 )(
   class Meals extends Component {
+    searchRef = createRef();
     onSelectHandler = id => {
       this.props.history.push(`meal/${id}`);
+    };
+    onSearchHandler = e => {
+      if (e.target.name === 'searchBtn' || e.keyCode === 13) {
+        const query = this.searchRef.current.value;
+        this.props.fetchList(query);
+      }
     };
     componentDidMount() {
       this.props.fetchList();
@@ -43,8 +50,14 @@ export default connect(
               alt=''
             />
             <div className={classes.searchBar}>
-              <input type='text' />
-              <button>search</button>
+              <input
+                onKeyDown={this.onSearchHandler}
+                type='text'
+                ref={this.searchRef}
+              />
+              <button name='searchBtn' onClick={this.onSearchHandler}>
+                search
+              </button>
             </div>
             <MealList list={this.props.list} onClick={this.onSelectHandler} />
           </section>
