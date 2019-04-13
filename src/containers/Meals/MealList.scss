@@ -100,19 +100,13 @@
         left: 55%;
         width: 60%;
       }
-      // > .panda {
-      //   top: 10px;
-      // }
-      // > .panda:nth-child(3) {
-      //   top: 20px;
-      // }
       div[id='mealList'] {
         grid-template-columns: 1fr 1fr 1fr;
       }
     }
   }
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
   .container {
     .main {
       .searchBar {
