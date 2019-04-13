@@ -12,15 +12,16 @@ function setAuthData(state, data) {
 function LOGOUT(state) {
   return initialState;
 }
-function setLoading(state) {
-  return combine(state, { loading: true });
+function setLoading(state, loading) {
+  if (loading) return combine(state, { loading: true });
+  else return combine(state, { loading: false });
 }
 export default function(state = initialState, action) {
   switch (action.type) {
     case SET_AUTH_DATA:
       return setAuthData(state, action.data);
     case SET_LOADING:
-      return setLoading(state);
+      return setLoading(state, action.loading);
     case LOG_OUT:
       return LOGOUT(state);
     default:

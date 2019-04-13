@@ -15,6 +15,7 @@ class App extends Component {
   componentDidMount = () => {
     this.setState({ isStart: false });
     const authed = localStorage.getItem('auth');
+
     if (authed) this.props.setAuth(JSON.parse(authed));
   };
 

@@ -18,7 +18,7 @@ const mpd = dispatch => ({
   setAuth: data => {
     dispatch({ type: SET_AUTH_DATA, data });
   },
-  setLoading: () => dispatch({ type: SET_LOADING })
+  setLoading: loading => dispatch({ type: SET_LOADING, loading })
 });
 export default connect(
   mps,
@@ -43,7 +43,7 @@ export default connect(
         }
       };
       onSubmitHandler = async e => {
-        this.props.setLoading();
+        this.props.setLoading(1);
         e.preventDefault();
         this.onRestErrHandler();
         const { email, password, ...others } = this.state.formControls;
@@ -68,10 +68,12 @@ export default connect(
               this.props.setAuth(user);
               this.props.history.push('/menu');
             }
+            this.props.setLoading(0);
           } catch (error) {
             const eB = { ...this.state.errorBlocks };
             eB[error.origin] = error.message;
             this.setState({ errorBlocks: eB });
+            this.props.setLoading(0);
           }
         } else {
           try {
@@ -85,9 +87,11 @@ export default connect(
               errorBlocks.userName =
                 'This username may already be used, try to used another one.';
               this.setState({ errorBlocks });
+              this.props.setLoading(0);
             } else {
               //redux
               localStorage.setItem('auth', JSON.stringify(user));
+              this.props.setLoading(0);
 
               this.props.setAuth(user);
               this.props.history.push('/menu');
@@ -97,6 +101,7 @@ export default connect(
             if (error.origin) eB[error.origin] = error.message;
             else eB.confirmPassword = "Two passwords doesn't match.";
             this.setState({ errorBlocks: eB });
+            this.props.setLoading(0);
           }
         }
       };

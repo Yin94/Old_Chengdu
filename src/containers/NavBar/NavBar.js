@@ -29,6 +29,7 @@ export default connect(
     };
     render() {
       const token = this.props.token;
+
       return (
         token && (
           <>
