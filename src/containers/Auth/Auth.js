@@ -47,7 +47,6 @@ export default connect(
         e.preventDefault();
         this.onRestErrHandler();
         const { email, password, ...others } = this.state.formControls;
-
         if (this.props.match.params['mode'] === '1') {
           try {
             await Joi.validate({ email, password }, loginSchema);

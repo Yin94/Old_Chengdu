@@ -18,33 +18,40 @@ class App extends Component {
 
     if (authed) this.props.setAuth(JSON.parse(authed));
   };
-
   render() {
     return (
       <div id='app'>
-        {this.state.isStart && !localStorage.getItem('auth') && (
-          <Redirect to='/auth/1' />
+        {!this.props.token ? (
+          <>
+            <Switch>
+              <Route path='/auth/:mode' component={Auth} />
+              <Redirect to='/auth/1' />
+            </Switch>
+          </>
+        ) : (
+          <>
+            <NavBar />
+            <Switch>
+              <Route path='/menu' component={Meals} />
+              <Route path='/meal/:id' component={MealDetail} />
+              <Route path='/cart' component={Cart} />
+              <Redirect to='/menu' />
+            </Switch>
+          </>
         )}
-        <NavBar />
-
-        <Switch>
-          <Route path='/menu' component={Meals} />
-          <Route path='/auth/:mode' component={Auth} />
-          <Route path='/auth/:mode' component={Auth} />
-          <Route path='/meal/:id' component={MealDetail} />
-          <Route path='/cart' component={Cart} />
-          <Redirect to='menu' />
-        </Switch>
       </div>
     );
   }
 }
+const mps = state => ({
+  token: state.auth.token
+});
 const mpd = dispatch => ({
   setAuth: data => {
     dispatch({ type: SET_AUTH_DATA, data });
   }
 });
 export default connect(
-  null,
+  mps,
   mpd
 )(App);
