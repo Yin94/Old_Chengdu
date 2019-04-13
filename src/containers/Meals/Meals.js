@@ -3,6 +3,7 @@ import classes from './MealList.css';
 import MealList from './MealList/MealList';
 import { connect } from 'react-redux';
 import Pagination from '../../components/Pagination/Pagination';
+import LoadingModal from '../../UI/LoadingModal/LoadingModal';
 import { startFetchList } from '../../store_redux/meals/meals';
 
 const mps = state => ({
@@ -11,7 +12,8 @@ const mps = state => ({
   currentPage: state.meals.pageIndex + 1,
   totalCount: state.meals.totalCount,
   error: state.meals.error,
-  succeed: state.meals.succeed
+  succeed: state.meals.succeed,
+  loading: state.meals.loading
 });
 const mpd = dispatch => ({
   fetchList: (pageIndex, query, firstSearch) => {
@@ -77,6 +79,7 @@ export default connect(
               pageSelected={this.onPageNavHandler}
               currentPage={this.props.currentPage}
             />
+            {this.props.loading && <LoadingModal />}
           </section>
         </div>
       );

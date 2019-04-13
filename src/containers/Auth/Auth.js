@@ -9,6 +9,7 @@ import ErrorBlock from '../../UI/ErrorBlock/ErrorBlock';
 import Joi from 'joi';
 import { connect } from 'react-redux';
 import { SET_AUTH_DATA, SET_LOADING } from '../../store_redux/auth/auth';
+import LoadingModal from '../../UI/LoadingModal/LoadingModal';
 import { Redirect } from 'react-router-dom';
 const mps = state => ({
   token: state.auth.token,
@@ -163,11 +164,7 @@ export default connect(
         return (
           <>
             {this.props.token && <Redirect to='/menu' />}
-            {this.props.loading && (
-              <div className={classes.loadingModal}>
-                <Spinner />
-              </div>
-            )}
+            {this.props.loading && <LoadingModal />}
 
             <div className={classes.container}>
               <form onSubmit={this.onSubmitHandler} ref={this.formRef}>

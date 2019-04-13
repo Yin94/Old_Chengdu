@@ -58,6 +58,10 @@
 
 .container .mainArea .mainPic {
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  -webkit-animation: slideInLeft 0.7s ease-in-out;
+          animation: slideInLeft 0.7s ease-in-out;
 }
 
 .container .mainArea .mainPic img {
@@ -66,6 +70,10 @@
 }
 
 .container .mainArea .detail {
+  position: relative;
+  overflow: hidden;
+  -webkit-animation: slideInRight 0.7s ease-in-out;
+          animation: slideInRight 0.7s ease-in-out;
   background-color: #9d0315;
   padding: 0 0 5% 0;
   height: auto;
@@ -139,6 +147,42 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideInRight {
+  0% {
+    left: 90%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    left: 90%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes slideInLeft {
+  0% {
+    right: 90%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    right: 90%;
+  }
+  100% {
+    right: 0;
   }
 }
 

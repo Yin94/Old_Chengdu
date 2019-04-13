@@ -1,8 +1,13 @@
 button {
   padding: 15px;
-  font-weight: bold;
   cursor: pointer;
+  font-weight: bold;
+  border: 0;
   outline: none;
+}
+button:active {
+  filter: brightness(105%);
+  font-weight: normal;
 }
 button.groupBtn {
   background-color: green;
@@ -16,6 +21,7 @@ button.groupBtn {
 }
 button.groupBtn:disabled {
   cursor: not-allowed;
+
   color: grey;
 }
 button.groupBtn:first-child {

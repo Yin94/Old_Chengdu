@@ -10,7 +10,8 @@
   /* max-width: 40%; */
 }
 .pagiPanel button:disabled {
-  background-color: #fff;
+  background-color: #ffff;
+  cursor: not-allowed;
 }
 .pagiPanel > startNend {
   width: 7%;

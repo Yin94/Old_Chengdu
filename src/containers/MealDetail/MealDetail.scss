@@ -46,6 +46,9 @@
 
     .mainPic {
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: slideInLeft 0.7s ease-in-out;
       img {
         width: 100%;
         max-width: 1000px;
@@ -53,6 +56,10 @@
     }
 
     .detail {
+      position: relative;
+      overflow: hidden;
+      animation: slideInRight 0.7s ease-in-out;
+
       background-color: #9d0315;
       padding: 0 0 5% 0;
       height: auto;
@@ -75,6 +82,7 @@
           margin-bottom: 10%;
           font-size: 1.5em;
         }
+
         .selectPanel {
           display: grid;
           color: white;
@@ -110,6 +118,22 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  0% {
+    left: 90%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    right: 90%;
+  }
+  100% {
+    right: 0;
   }
 }
 @keyframes swinging {

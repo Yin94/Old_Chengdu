@@ -90,6 +90,7 @@ export default connect(
                     </select>
                   </div>
                   <Button
+                    btn
                     style={{
                       gridArea: 'btn',
                       display: 'block',
