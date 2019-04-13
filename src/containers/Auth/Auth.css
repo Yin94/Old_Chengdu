@@ -76,6 +76,10 @@
   margin: 40px 0 20px 0;
 }
 
+.container form .iconFrame img {
+  src: url("../../assets/images/Auth/panda.png");
+}
+
 .container form .controlGroup {
   width: 80%;
   margin: 20px auto;
