@@ -21,7 +21,8 @@ export default connect(
     };
     onShowHandler = () => {
       let width = '15%';
-      if (window.innerWidth < 1000) width = '40%';
+      if (window.innerWidth < 500) width = '60%';
+      else if (window.innerWidth < 1000) width = '40%';
       this.barRef.current.style.width = width;
     };
     onLogOutHandler = () => {
