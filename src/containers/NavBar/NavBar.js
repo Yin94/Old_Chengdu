@@ -48,7 +48,7 @@ export default connect(
                   <p>
                     <span>></span> <span> Menu</span>
                     <img
-                      src='https://static1.squarespace.com/static/5482422be4b0d888e3a1ef5f/t/5ae17ddf1ae6cf941a6ac474/1524727269975/1.png'
+                      src={require('../../assets/images/NavBar/1.png')}
                       alt='menu'
                     />
                   </p>
@@ -57,7 +57,7 @@ export default connect(
                   <p>
                     <span>></span> <span> Basket</span>
                     <img
-                      src='https://www.freeiconspng.com/uploads/grocery-basket-icon-8.png'
+                      src={require('../../assets/images/NavBar/2.png')}
                       alt='basket'
                     />
                   </p>
@@ -68,7 +68,7 @@ export default connect(
                     <span>></span>
                     <span>My Info</span>
                     <img
-                      src='https://cdn3.iconfinder.com/data/icons/fillies-small/64/id-card-512.png'
+                      src={require('../../assets/images/NavBar/3.png')}
                       alt='contact'
                     />
                   </p>
@@ -78,7 +78,7 @@ export default connect(
                     <span>></span>
                     <span>About Us</span>
                     <img
-                      src='http://pngimg.com/uploads/panda/panda_PNG17.png'
+                      src={require('../../assets/images/NavBar/4.png')}
                       alt='basket'
                     />
                   </p>
@@ -89,7 +89,7 @@ export default connect(
                     <span>></span>
                     <span>Contact</span>
                     <img
-                      src='http://www.stickpng.com/assets/images/5a4525cd546ddca7e1fcbc84.png'
+                      src={require('../../assets/images/NavBar/6.png')}
                       alt='contact'
                     />
                   </p>
@@ -101,8 +101,8 @@ export default connect(
                     <span>></span>
                     <span>Log Out</span>
                     <img
-                      src='https://cdn2.iconfinder.com/data/icons/picons-essentials/57/logout-512.png'
-                      alt='contact'
+                      src={require('../../assets/images/NavBar/5.png')}
+                      alt='logout'
                     />
                   </p>
                 </NavLink>

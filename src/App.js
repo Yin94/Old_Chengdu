@@ -21,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <div id='app'>
-        {!this.props.token ? (
+        {!this.props.token && !localStorage.getItem('auth') ? (
           <>
             <Switch>
               <Route path='/auth/:mode' component={Auth} />

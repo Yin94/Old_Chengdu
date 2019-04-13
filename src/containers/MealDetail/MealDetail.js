@@ -50,12 +50,12 @@ export default connect(
         <div className={classes.container}>
           <div className={classes.modal}>
             <img
-              src='https://i.pinimg.com/originals/c0/09/de/c009de8da90e99fd96c72eb4a8194a37.png'
+              src={require('../../assets/images/MealDetail/panda.png')}
               alt=''
             />
             <img
               className={classes.latern}
-              src='https://images.vexels.com/media/users/3/158473/isolated/preview/6240a4222abfa5dc8290ef557f17bed8-chinese-lantern-flat-by-vexels.png'
+              src={require('../../assets/images/MealDetail/lantern.png')}
               alt=''
             />
             <div className={classes.mainArea}>

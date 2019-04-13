@@ -48,18 +48,18 @@ export default connect(
         <div className={classes.container}>
           <section className={classes.main}>
             <img
-              src='http://www.happypandatx.com/wp-content/uploads/2017/12/happypanda_logo.png'
-              alt=''
+              src={require('../../assets/images/MealList/logo.png')}
+              alt='logo'
             />
             <img
               className={classes.panda}
-              src='https://dejpknyizje2n.cloudfront.net/marketplace/products/cute-panda-icon-sticker-1539641331.8735018.png'
-              alt=''
+              src={require('../../assets/images/MealList/panda_eating.png')}
+              alt='panda_eating'
             />
             <img
               className={classes.panda}
-              src='https://cdn3.iconfinder.com/data/icons/spa-flat-colorful/614/4600_-_Bamboo_Stick-512.png'
-              alt=''
+              src={require('../../assets/images/MealList/bamboo.png')}
+              alt='bamboo'
             />
             <div className={classes.searchBar}>
               <input

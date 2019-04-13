@@ -52,7 +52,7 @@ export default connect(
               </div>
               <div className={classes.desc}>
                 <img
-                  src='http://www.happypandatx.com/wp-content/uploads/2017/12/happypanda_logo.png'
+                  src={require('../../assets/images/MealList/logo.png')}
                   alt=''
                 />
                 <Button btn>Order Now</Button>
