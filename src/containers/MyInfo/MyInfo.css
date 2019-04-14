@@ -1,0 +1,15 @@
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.container * {
+  margin: auto;
+}
+
+.container form {
+  width: 50%;
+  background-color: #fff;
+}
+/*# sourceMappingURL=MyInfo.css.map */

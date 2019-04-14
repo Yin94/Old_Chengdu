@@ -2,12 +2,14 @@
   display: block;
   position: relative;
   text-align: center;
-  margin-top: 50px;
+  width: 50%;
+  margin: auto;
+
+  padding: 50px 0;
 }
 
 .pagiPanel button {
-  width: 10%;
-  /* max-width: 40%; */
+  width: 8%;
 }
 .pagiPanel button:disabled {
   background-color: #ffff;

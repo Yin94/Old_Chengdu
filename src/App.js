@@ -9,6 +9,7 @@ import Cart from './containers/Cart/Cart';
 import { SET_AUTH_DATA } from './store_redux/auth/auth';
 import { connect } from 'react-redux';
 import MyInfo from './containers/MyInfo/MyInfo';
+import AboutUs from './components/AboutUs/AboutUs';
 class App extends Component {
   state = {
     isStart: true
@@ -37,6 +38,7 @@ class App extends Component {
               <Route path='/meal/:id' component={MealDetail} />
               <Route path='/cart' component={Cart} />
               <Route path='/my-info' component={MyInfo} />
+              <Route path='/about-us' component={AboutUs} />
               <Redirect to='/menu' />
             </Switch>
           </>

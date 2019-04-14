@@ -1,0 +1,127 @@
+.container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'icon icon icon' 'header header header ' 'h2 h2 h2' 'positionMap main main' 'contact main main';
+  width: 80%;
+  margin: auto;
+  grid-gap: 0 10px;
+  text-align: center;
+}
+
+.container .icon {
+  width: 15%;
+  position: relative;
+  right: 7%;
+  top: 5%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: icon;
+}
+
+.container h2 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: h2;
+  padding-bottom: 50px;
+}
+
+.container .contact {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: contact;
+}
+
+.container .contact p {
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.container .contact p img {
+  width: 10%;
+}
+
+.container .contact p span {
+  padding-left: 10px;
+  position: relative;
+}
+
+.container header {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+  font-size: 2em;
+}
+
+.positionMap {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: positionMap;
+  width: 20vw;
+  height: 20vw;
+}
+
+.main {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: main;
+}
+
+@media only screen and (max-width: 1500px) {
+  .container .contact p {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    width: 90%;
+    grid-column-gap: 0;
+        grid-template-areas: 'icon icon icon' 'header header header ' 'h2 h2 h2' 'positionMap positionMap contact' 'main main main';
+  }
+  .container .icon {
+    right: 0;
+  }
+  .container .positionMap {
+    width: 35vw;
+    height: 35vw;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    width: 90%;
+    grid-column-gap: 0;
+        grid-template-areas: 'icon icon icon' 'header header header ' 'h2 h2 h2' 'main main main' 'positionMap positionMap positionMap' 'contact contact contact';
+  }
+  .container .icon {
+    width: 20%;
+  }
+  .container header {
+    font-size: 1.5em;
+  }
+  .container h2 {
+    font-size: 1.1em;
+    padding-bottom: 20px;
+  }
+  .container .main {
+    text-align: left;
+  }
+  .container .icon {
+    right: 0;
+  }
+  .container .positionMap {
+    width: 80vw;
+    height: 80vw;
+    margin: 10px auto;
+  }
+  .container .contact {
+    padding-top: 5px;
+  }
+}
+/*# sourceMappingURL=AboutUs.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,MAAM;CASnB;;AAZD,AAKE,UALQ,CAKR,CAAC,CAAC;EACA,MAAM,EAAE,IAAI;CACb;;AAPH,AAQE,UARQ,CAQR,IAAI,CAAC;EACH,KAAK,EAAE,GAAG;EACV,gBAAgB,EAAE,IAAI;CACvB",
+    "sources": [
+        "MyInfo.scss"
+    ],
+    "names": [],
+    "file": "MyInfo.css"
+}

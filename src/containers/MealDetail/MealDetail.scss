@@ -1,11 +1,9 @@
 .container {
   width: 100%;
   height: 100vh;
-  animation-name: fadeIn;
-  animation-duration: 1s;
+  animation: fadeIn 1s;
   background-size: contain;
   overflow: auto;
-  background-position: center;
   background-image: url('http://bpic.588ku.com/back_pic/05/55/81/035b161b2c96b6d.jpg');
 
   .modal {
@@ -14,9 +12,8 @@
     min-height: 100%;
     margin: auto;
     background-color: rgba(255, 255, 255, 0.8);
-    overflow: auto;
     border-radius: 0;
-    padding-bottom: 100px;
+    overflow: auto;
     > img {
       width: 10%;
     }

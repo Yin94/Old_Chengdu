@@ -1,0 +1,115 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    'icon icon icon'
+    'header header header ' 'h2 h2 h2' 'positionMap main main' 'contact main main';
+  width: 80%;
+  margin: auto;
+  grid-gap: 0 10px;
+  text-align: center;
+  .icon {
+    width: 15%;
+    position: relative;
+    right: 7%;
+    top: 5%;
+    grid-area: icon;
+  }
+  h2 {
+    grid-area: h2;
+    padding-bottom: 50px;
+  }
+  .contact {
+    grid-area: contact;
+
+    p {
+      font-size: 1.5em;
+      text-align: left;
+      img {
+        width: 10%;
+      }
+      span {
+        padding-left: 10px;
+        position: relative;
+      }
+    }
+  }
+}
+.container header {
+  grid-area: header;
+  font-size: 2em;
+}
+.positionMap {
+  grid-area: positionMap;
+  width: 20vw;
+  height: 20vw;
+}
+.main {
+  grid-area: main;
+}
+
+@media only screen and (max-width: 1500px) {
+  .container {
+    .contact {
+      p {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    .icon {
+      right: 0;
+    }
+    width: 90%;
+    grid-column-gap: 0;
+    .positionMap {
+      width: 35vw;
+      height: 35vw;
+      margin-bottom: 20px;
+    }
+    grid-template-areas:
+      'icon icon icon'
+      'header header header ' 'h2 h2 h2' 'positionMap positionMap contact' 'main main main';
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    .icon {
+      width: 20%;
+    }
+    header {
+      font-size: 1.5em;
+    }
+    h2 {
+      font-size: 1.1em;
+      padding-bottom: 20px;
+    }
+    .main {
+      text-align: left;
+    }
+    .icon {
+      right: 0;
+    }
+    width: 90%;
+    grid-column-gap: 0;
+    .positionMap {
+      width: 80vw;
+      height: 80vw;
+
+      margin: 10px auto;
+    }
+    .contact {
+      padding-top: 5px;
+    }
+    grid-template-areas:
+      'icon icon icon'
+      'header header header '
+      'h2 h2 h2'
+      'main main main'
+      'positionMap positionMap positionMap'
+      'contact contact contact';
+  }
+}
