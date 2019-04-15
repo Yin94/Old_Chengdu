@@ -17,7 +17,34 @@
   border-radius: 0;
 }
 
-.container > div {
+.container .sleepingPanda {
+  text-align: center;
+}
+
+.container .sleepingPanda img {
+  padding-left: 2%;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.container .sleepingPanda p {
+  font-size: 2em;
+  color: black;
+}
+
+.container .sleepingPanda p a {
+  font-weight: bold;
+  color: #e5001c;
+  text-decoration: none;
+}
+
+.container .sleepingPanda p a:hover {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+.container .main {
   padding: 10% 0;
   display: -ms-grid;
   display: grid;
@@ -27,12 +54,12 @@
   margin: auto;
 }
 
-.container > div .list {
+.container .main .list {
   background-color: #e5001c;
   padding: 25px 50px 25px 0;
 }
 
-.container > div .list .total {
+.container .main .list .total {
   color: white;
   font-size: 2em;
   padding-top: 30px;
@@ -40,17 +67,17 @@
   display: block;
 }
 
-.container > div .list .total small {
+.container .main .list .total small {
   color: wheat;
 }
 
-.container > div .list div {
+.container .main .list div {
   position: relative;
   padding: 10px 0;
   overflow: hidden;
 }
 
-.container > div .list div p {
+.container .main .list div p {
   position: relative;
   -webkit-animation: slideIn 1s ease-out;
           animation: slideIn 1s ease-out;
@@ -59,23 +86,23 @@
   background-color: wheat;
 }
 
-.container > div .list div p strong {
+.container .main .list div p strong {
   font-size: 20px;
   font-weight: bold;
 }
 
-.container > div .list div p span {
+.container .main .list div p span {
   padding: 0 20px 0 0;
   font-size: 12px;
 }
 
-.container > div .list div p small {
+.container .main .list div p small {
   font-size: 1.2em;
   padding: 0 20px;
   font-weight: normal;
 }
 
-.container > div .list div p a {
+.container .main .list div p a {
   font-weight: bold;
   float: right;
   text-decoration: none;
@@ -83,27 +110,28 @@
   font-size: 1.2em;
 }
 
-.container > div .list div p a:hover {
+.container .main .list div p a:hover {
   color: white;
 }
 
-.container > div .desc {
+.container .main .desc {
   margin-left: 50px;
 }
 
-.container > div .desc img {
+.container .main .desc img {
   max-width: 100%;
 }
 
-.container > div .desc button {
+.container .main .desc button {
   margin: 30px auto;
   width: 80%;
+  display: block;
   font-size: 1.5em;
   background-color: #e5001c;
   color: gold;
 }
 
-.container > div .desc strong {
+.container .main .desc strong {
   margin-left: 20px;
   color: green;
   font-size: 1.5em;
@@ -149,49 +177,45 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .container > div {
+  .container .main {
     grid-row-gap: 20px;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    -ms-grid-columns: 4fr 1fr;
+        grid-template-columns: 4fr 1fr;
   }
-  .container > div .desc {
-    width: 80%;
+  .container .main .desc {
+    width: 90%;
     margin: auto;
   }
-  .container > div .desc img {
-    max-width: 50%;
-    float: left;
-  }
-  .container > div .desc button {
-    float: right;
-    margin-left: 20px;
-    width: 40%;
+  .container .main .desc button {
+    font-size: 1em;
+    padding: 10px;
+    margin: 30px auto;
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .container > div {
+@media only screen and (max-width: 1000px) {
+  .container .main {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
-  .container > div .desc {
+  .container .main .desc {
     width: 80%;
     margin: auto;
     position: relative;
   }
-  .container > div .desc img {
+  .container .main .desc img {
     max-width: 50%;
     float: none;
     display: block;
   }
-  .container > div .desc button {
+  .container .main .desc button {
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 1.2em;
+    font-size: 1em;
     width: 40%;
   }
-  .container > div .desc strong {
+  .container .main .desc strong {
     padding-top: 10px;
     float: none;
     display: block;
@@ -199,48 +223,55 @@
 }
 
 @media only screen and (max-width: 400px) {
-  .container > div {
+  .container .sleepingPanda {
+    padding-top: 50%;
+  }
+  .container .sleepingPanda p {
+    font-size: 1.2em;
+  }
+  .container .main {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
-  .container > div .list {
+  .container .main .list {
     padding-right: 10px;
   }
-  .container > div .list div p strong {
+  .container .main .list div p strong {
     font-size: 10px;
     padding: 0 3px;
     margin: 0;
   }
-  .container > div .list div p span {
+  .container .main .list div p span {
     font-size: 10px;
     padding: 0 3px;
     margin: 0;
   }
-  .container > div .list div p small {
+  .container .main .list div p small {
     font-size: 10px;
     padding: 0 3px;
     margin: 0;
   }
-  .container > div .list div p a {
+  .container .main .list div p a {
     font-size: 10px;
     padding: 0 3px;
     margin: 0;
   }
-  .container > div .desc {
+  .container .main .desc {
     width: 100%;
     margin: auto;
   }
-  .container > div .desc img {
+  .container .main .desc img {
     max-width: 60%;
     margin: auto;
   }
-  .container > div .desc button {
+  .container .main .desc button {
     float: none;
     font-size: 1.2em;
+    margin-left: 0;
     width: 100%;
     position: static;
   }
-  .container > div .desc strong {
+  .container .main .desc strong {
     margin-left: 0;
     font-size: 1.2em;
   }

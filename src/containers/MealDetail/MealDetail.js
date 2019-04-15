@@ -30,7 +30,7 @@ export default connect(
   class MealDetail extends Component {
     state = {
       count: 1,
-      mode: 0,
+      mode: false,
       index: 0
     };
     countRef = createRef();

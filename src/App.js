@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
-import Auth from './containers/Auth/Auth';
-import Meals from './containers/Meals/Meals';
-import NavBar from './containers/NavBar/NavBar';
-import MealDetail from './containers/MealDetail/MealDetail';
+import React, { Component, Suspense } from 'react';
 import './App.css';
 import { Route, Redirect, Switch } from 'react-router-dom';
-import Cart from './containers/Cart/Cart';
 import { SET_AUTH_DATA } from './store_redux/auth/auth';
 import { connect } from 'react-redux';
+//
+const Auth = React.lazy(() => import('./containers/Auth/Auth'));
+const Meals = React.lazy(() => import('./containers/Meals/Meals'));
+const NavBar = React.lazy(() => import('./containers/NavBar/NavBar'));
+const MealDetail = React.lazy(() =>
+  import('./containers/MealDetail/MealDetail')
+);
+const Cart = React.lazy(() => import('./containers/Cart/Cart'));
+const AboutUs = React.lazy(() => import('./components/AboutUs/AboutUs'));
 
-import AboutUs from './components/AboutUs/AboutUs';
 class App extends Component {
   state = {
     isStart: true
@@ -17,32 +20,33 @@ class App extends Component {
   componentDidMount = () => {
     this.setState({ isStart: false });
     const authed = localStorage.getItem('auth');
-
     if (authed) this.props.setAuth(JSON.parse(authed));
   };
   render() {
     return (
       <div id='app'>
-        {!this.props.token && !localStorage.getItem('auth') ? (
-          <>
-            <Switch>
-              <Route path='/auth/:mode' component={Auth} />
-              <Redirect to='/auth/1' />
-            </Switch>
-          </>
-        ) : (
-          <>
-            <NavBar />
-            <Switch>
-              <Route path='/menu' component={Meals} />
-              <Route path='/meal/:id' component={MealDetail} />
-              <Route path='/cart' component={Cart} />
+        <Suspense fallback={<div>loading lazy component...</div>}>
+          {!this.props.token && !localStorage.getItem('auth') ? (
+            <>
+              <Switch>
+                <Route path='/auth/:mode' component={Auth} />
+                <Redirect to='/auth/1' />
+              </Switch>
+            </>
+          ) : (
+            <>
+              <NavBar />
+              <Switch>
+                <Route path='/menu' component={Meals} />
+                <Route path='/meal/:id' component={MealDetail} />
+                <Route path='/cart' component={Cart} />
 
-              <Route path='/about-us' component={AboutUs} />
-              <Redirect to='/menu' />
-            </Switch>
-          </>
-        )}
+                <Route path='/about-us' component={AboutUs} />
+                <Redirect to='/menu' />
+              </Switch>
+            </>
+          )}
+        </Suspense>
       </div>
     );
   }

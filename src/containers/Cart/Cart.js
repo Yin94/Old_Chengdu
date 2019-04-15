@@ -4,10 +4,12 @@ import Button from '../../UI/Button/Button';
 import CartList from './CartList/CartList';
 import { connect } from 'react-redux';
 import LoadingModal from '../../UI/LoadingModal/LoadingModal';
+import { Link } from 'react-router-dom';
 import {
   startFetchList,
   startDeleteItem,
-  startClearBasket
+  startClearBasket,
+  resetStatus
 } from '../../store_redux/basket/basket';
 const mps = state => ({
   token: state.auth.token,
@@ -16,6 +18,7 @@ const mps = state => ({
   succeed: state.basket.succeed
 });
 const mpd = dispatch => ({
+  resetStatus: () => dispatch(resetStatus()),
   fetchList: token => {
     dispatch(startFetchList(token));
   },
@@ -38,6 +41,10 @@ export default connect(
             JSON.parse(localStorage.getItem('auth'))['token']
           );
     }
+    componentWillUnmount() {
+      this.props.resetStatus();
+    }
+
     onOrderHandler = () => {
       this.props.clearBasket(this.props.token);
     };
@@ -50,11 +57,48 @@ export default connect(
         (prev, current) => prev + current.meal.price * current.count,
         0
       );
+      if (list.length === 0) {
+        return (
+          <div className={classes.withBg}>
+            <div className={classes.container}>
+              <div className={classes.sleepingPanda}>
+                {this.props.succeed ? (
+                  <>
+                    <img
+                      src={require('../../assets/images/Cart/sleepingPanda.png')}
+                      alt=''
+                    />
+                    <p>Thanks! We got your order. Will contact you soon!</p>
+                  </>
+                ) : (
+                  <>
+                    <img
+                      src={require('../../assets/images/Cart/cryingPand.gif')}
+                      alt=''
+                      style={{
+                        paddingTop: '20%'
+                      }}
+                    />
+                    <p>
+                      You got nothing in your basket,{' '}
+                      <span>
+                        <Link to='/menu'>
+                          <small>go add some!</small>
+                        </Link>
+                      </span>
+                    </p>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+        );
+      }
       return (
         <div className={classes.withBg}>
           {this.props.loading && <LoadingModal />}
           <div className={classes.container}>
-            <div>
+            <div className={classes.main}>
               <div className={classes.list}>
                 <CartList list={list} deleteItem={this.onDeleteHandler} />
                 <strong className={classes.total}>
@@ -66,15 +110,10 @@ export default connect(
                   src={require('../../assets/images/MealList/logo.png')}
                   alt=''
                 />
-                {this.props.succeed ? (
-                  <strong style={{}}>
-                    Thanks! We got your order. Will be contact you soon!
-                  </strong>
-                ) : (
-                  <Button btn onClick={this.onOrderHandler}>
-                    Order Now
-                  </Button>
-                )}
+
+                <Button btn onClick={this.onOrderHandler}>
+                  Order Now
+                </Button>
               </div>
             </div>
           </div>

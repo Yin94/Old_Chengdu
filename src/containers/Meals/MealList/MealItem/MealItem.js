@@ -4,7 +4,7 @@ import SpicePanel from '../../../../components/SpicePanel/SpicePanel';
 export default function MealItem({ item, onClick }) {
   return (
     <div className={classes.container}>
-      <img src={item.img} alt='item.img' onClick={() => onClick(item.id)} />
+      <img src={item.imgs[0]} alt='item.img' onClick={() => onClick(item.id)} />
       <SpicePanel
         classInput={classes.spicePanel}
         spiceDegree={item.spiceDegree}

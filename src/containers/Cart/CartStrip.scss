@@ -9,12 +9,36 @@
 .container {
   animation: fadeIn 1s;
   width: 80%;
-
   min-height: 100vh;
   margin: 0 auto;
   background-color: rgba(211, 211, 211, 0.8);
   border-radius: 0;
-  > div {
+  .sleepingPanda {
+    text-align: center;
+
+    img {
+      padding-left: 2%;
+      display: block;
+      margin: auto;
+      max-width: 100%;
+    }
+    p {
+      font-size: 2em;
+      color: black;
+
+      a {
+        font-weight: bold;
+        color: #e5001c;
+        text-decoration: none;
+      }
+      a:hover {
+        filter: brightness(50%);
+      }
+
+      // font-weight:
+    }
+  }
+  .main {
     padding: 10% 0;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -79,6 +103,7 @@
       button {
         margin: 30px auto;
         width: 80%;
+        display: block;
 
         font-size: 1.5em;
         background-color: #e5001c;
@@ -116,29 +141,25 @@
 
 @media only screen and (max-width: 1200px) {
   .container {
-    > div {
+    .main {
       grid-row-gap: 20px;
-      grid-template-columns: 1fr;
+      grid-template-columns: 4fr 1fr;
       .desc {
-        width: 80%;
+        width: 90%;
         margin: auto;
-        img {
-          max-width: 50%;
-          float: left;
-        }
         button {
-          float: right;
-          margin-left: 20px;
-          width: 40%;
+          font-size: 1em;
+          padding: 10px;
+          margin: 30px auto;
         }
       }
     }
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
   .container {
-    > div {
+    .main {
       grid-template-columns: 1fr;
       .desc {
         width: 80%;
@@ -153,7 +174,7 @@
           position: absolute;
           top: 0;
           right: 0;
-          font-size: 1.2em;
+          font-size: 1em;
           width: 40%;
         }
         strong {
@@ -168,7 +189,13 @@
 
 @media only screen and (max-width: 400px) {
   .container {
-    > div {
+    .sleepingPanda {
+      padding-top: 50%;
+      p {
+        font-size: 1.2em;
+      }
+    }
+    .main {
       grid-template-columns: 1fr;
       .list {
         padding-right: 10px;
@@ -208,6 +235,7 @@
         button {
           float: none;
           font-size: 1.2em;
+          margin-left: 0;
           width: 100%;
           position: static;
         }

@@ -20,6 +20,9 @@ function loading(state) {
 function error(state) {
   return combine(state, { error: true });
 }
+function reset() {
+  return combine(initialState);
+}
 export default function(state = initialState, action) {
   switch (action.type) {
     case SET_LIST:
@@ -30,6 +33,8 @@ export default function(state = initialState, action) {
       return loading(state);
     case ERROR_LIST:
       return error(state);
+    case RESET_STATUS:
+      return reset();
     default:
       return state;
   }
@@ -39,6 +44,7 @@ const SET_LIST = 'basket/SET_LIST';
 const LOG_OUT = 'basket/LOG_OUT';
 const SET_LOADING = 'basket/SET_LOADING';
 const ERROR_LIST = 'basket/ERROR_LIST';
+const RESET_STATUS = 'basket/RESET_STATUS';
 
 //
 export function startFetchList(token) {
@@ -65,4 +71,7 @@ export function startClearBasket(token) {
     if (list instanceof Error) dispatch({ type: ERROR_LIST });
     else dispatch({ type: SET_LIST, list, isOrder: true });
   };
+}
+export function resetStatus() {
+  return { type: RESET_STATUS };
 }
