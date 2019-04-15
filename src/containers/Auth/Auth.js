@@ -4,7 +4,7 @@ import classes from './Auth.css';
 import { NavLink, withRouter } from 'react-router-dom';
 import { loginSchema, signupSchema } from './schemas/schemas';
 import { signUpWithEmail, signInWithEmail } from '../../db/auth';
-import Spinner from '../../UI/Spinner/Spinner';
+
 import ErrorBlock from '../../UI/ErrorBlock/ErrorBlock';
 import Joi from 'joi';
 import { connect } from 'react-redux';
