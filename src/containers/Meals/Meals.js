@@ -45,6 +45,7 @@ export default connect(
     }
 
     render() {
+      if (!this.props.succeed) return <div />;
       return (
         <div className={classes.container}>
           <section className={classes.main}>

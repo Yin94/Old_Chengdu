@@ -123,6 +123,14 @@
           margin-left: 20px;
           width: 40%;
         }
+        strong {
+          margin-left: 20px;
+          color: green;
+          font-size: 1.5em;
+          font-weight: bold;
+          float: right;
+          width: 40;
+        }
       }
     }
   }
@@ -135,15 +143,23 @@
       .desc {
         width: 80%;
         margin: auto;
-
+        position: relative;
         img {
           max-width: 50%;
-          float: left;
+          float: none;
+          display: block;
         }
         button {
-          float: right;
+          position: absolute;
+          top: 0;
+          right: 0;
           font-size: 1.2em;
           width: 40%;
+        }
+        strong {
+          padding-top: 10px;
+          float: none;
+          display: block;
         }
       }
     }
@@ -187,12 +203,12 @@
 
         img {
           max-width: 50%;
-          float: left;
         }
         button {
           float: none;
           font-size: 1.2em;
           width: 100%;
+          position: static;
         }
       }
     }

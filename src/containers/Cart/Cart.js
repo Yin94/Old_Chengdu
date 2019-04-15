@@ -6,11 +6,14 @@ import { connect } from 'react-redux';
 import LoadingModal from '../../UI/LoadingModal/LoadingModal';
 import {
   startFetchList,
-  startDeleteItem
+  startDeleteItem,
+  startClearBasket
 } from '../../store_redux/basket/basket';
 const mps = state => ({
   token: state.auth.token,
-  list: state.basket.list
+  list: state.basket.list,
+  loading: state.basket.loading,
+  succeed: state.basket.succeed
 });
 const mpd = dispatch => ({
   fetchList: token => {
@@ -18,6 +21,9 @@ const mpd = dispatch => ({
   },
   deleteItem: (id, token) => {
     dispatch(startDeleteItem(id, token));
+  },
+  clearBasket: token => {
+    dispatch(startClearBasket(token));
   }
 });
 export default connect(
@@ -25,9 +31,6 @@ export default connect(
   mpd
 )(
   class extends React.Component {
-    state = {
-      loading: false
-    };
     componentDidMount() {
       this.props.token
         ? this.props.fetchList(this.props.token)
@@ -36,14 +39,7 @@ export default connect(
           );
     }
     onOrderHandler = () => {
-      this.setState({ loading: true });
-      setTimeout(
-        () =>
-          this.setState({ loading: false }, () =>
-            this.props.history.push('/order-succeed')
-          ),
-        1000
-      );
+      this.props.clearBasket(this.props.token);
     };
     onDeleteHandler = id => {
       this.props.deleteItem(id, this.props.token);
@@ -56,7 +52,7 @@ export default connect(
       );
       return (
         <div className={classes.withBg}>
-          {this.state.loading && <LoadingModal />}
+          {this.props.loading && <LoadingModal />}
           <div className={classes.container}>
             <div>
               <div className={classes.list}>
@@ -70,9 +66,15 @@ export default connect(
                   src={require('../../assets/images/MealList/logo.png')}
                   alt=''
                 />
-                <Button btn onClick={this.onOrderHandler}>
-                  Order Now
-                </Button>
+                {this.props.succeed ? (
+                  <strong style={{}}>
+                    Thanks! We got your order. Will be contacting you soon!
+                  </strong>
+                ) : (
+                  <Button btn onClick={this.onOrderHandler}>
+                    Order Now
+                  </Button>
+                )}
               </div>
             </div>
           </div>

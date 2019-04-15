@@ -158,6 +158,14 @@
     margin-left: 20px;
     width: 40%;
   }
+  .container > div .desc strong {
+    margin-left: 20px;
+    color: green;
+    font-size: 1.5em;
+    font-weight: bold;
+    float: right;
+    width: 40;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -168,15 +176,24 @@
   .container > div .desc {
     width: 80%;
     margin: auto;
+    position: relative;
   }
   .container > div .desc img {
     max-width: 50%;
-    float: left;
+    float: none;
+    display: block;
   }
   .container > div .desc button {
-    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
     font-size: 1.2em;
     width: 40%;
+  }
+  .container > div .desc strong {
+    padding-top: 10px;
+    float: none;
+    display: block;
   }
 }
 
@@ -214,12 +231,12 @@
   }
   .container > div .desc img {
     max-width: 50%;
-    float: left;
   }
   .container > div .desc button {
     float: none;
     font-size: 1.2em;
     width: 100%;
+    position: static;
   }
 }
 /*# sourceMappingURL=CartStrip.css.map */
