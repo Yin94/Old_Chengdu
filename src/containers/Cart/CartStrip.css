@@ -103,6 +103,15 @@
   color: gold;
 }
 
+.container > div .desc strong {
+  margin-left: 20px;
+  color: green;
+  font-size: 1.5em;
+  font-weight: bold;
+  float: right;
+  width: 40;
+}
+
 @-webkit-keyframes slideIn {
   0% {
     left: -350px;
@@ -157,14 +166,6 @@
     float: right;
     margin-left: 20px;
     width: 40%;
-  }
-  .container > div .desc strong {
-    margin-left: 20px;
-    color: green;
-    font-size: 1.5em;
-    font-weight: bold;
-    float: right;
-    width: 40;
   }
 }
 
@@ -226,17 +227,22 @@
     margin: 0;
   }
   .container > div .desc {
-    width: 80%;
+    width: 100%;
     margin: auto;
   }
   .container > div .desc img {
-    max-width: 50%;
+    max-width: 60%;
+    margin: auto;
   }
   .container > div .desc button {
     float: none;
     font-size: 1.2em;
     width: 100%;
     position: static;
+  }
+  .container > div .desc strong {
+    margin-left: 0;
+    font-size: 1.2em;
   }
 }
 /*# sourceMappingURL=CartStrip.css.map */

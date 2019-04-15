@@ -68,7 +68,7 @@ export default connect(
                 />
                 {this.props.succeed ? (
                   <strong style={{}}>
-                    Thanks! We got your order. Will be contacting you soon!
+                    Thanks! We got your order. Will be contact you soon!
                   </strong>
                 ) : (
                   <Button btn onClick={this.onOrderHandler}>

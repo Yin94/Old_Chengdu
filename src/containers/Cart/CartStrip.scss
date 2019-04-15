@@ -84,6 +84,14 @@
         background-color: #e5001c;
         color: gold;
       }
+      strong {
+        margin-left: 20px;
+        color: green;
+        font-size: 1.5em;
+        font-weight: bold;
+        float: right;
+        width: 40;
+      }
     }
   }
 }
@@ -122,14 +130,6 @@
           float: right;
           margin-left: 20px;
           width: 40%;
-        }
-        strong {
-          margin-left: 20px;
-          color: green;
-          font-size: 1.5em;
-          font-weight: bold;
-          float: right;
-          width: 40;
         }
       }
     }
@@ -198,17 +198,22 @@
         }
       }
       .desc {
-        width: 80%;
+        width: 100%;
         margin: auto;
 
         img {
-          max-width: 50%;
+          max-width: 60%;
+          margin: auto;
         }
         button {
           float: none;
           font-size: 1.2em;
           width: 100%;
           position: static;
+        }
+        strong {
+          margin-left: 0;
+          font-size: 1.2em;
         }
       }
     }
