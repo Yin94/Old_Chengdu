@@ -109,6 +109,7 @@
 @media only screen and (max-width: 1200px) {
   .container {
     > div {
+      grid-row-gap: 20px;
       grid-template-columns: 1fr;
       .desc {
         width: 80%;

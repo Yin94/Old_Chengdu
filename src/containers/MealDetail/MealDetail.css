@@ -8,6 +8,13 @@
   background-image: url("http://bpic.588ku.com/back_pic/05/55/81/035b161b2c96b6d.jpg");
 }
 
+.container .cartIcon {
+  position: absolute;
+  top: 0;
+  width: 20%;
+  z-index: 1;
+}
+
 .container .modal {
   width: 90%;
   max-width: 2000px;
@@ -40,7 +47,6 @@
 }
 
 .container .mainArea {
-  z-index: 2;
   width: 90%;
   max-width: 1800px;
   margin: 10px auto;
@@ -126,6 +132,24 @@
   color: white;
   text-align: center;
   display: block;
+}
+
+@-webkit-keyframes addItem {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100vh;
+  }
+}
+
+@keyframes addItem {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100vh;
+  }
 }
 
 @-webkit-keyframes fadeIn {

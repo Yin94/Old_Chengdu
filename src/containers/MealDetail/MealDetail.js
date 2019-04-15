@@ -30,6 +30,7 @@ export default connect(
       count: 1
     };
     countRef = createRef();
+
     componentDidMount() {
       if (this.props.currentMeal === {}) return;
       const id = this.props.match.params.id;
@@ -38,6 +39,8 @@ export default connect(
 
     onAddHandler = (id, count) => {
       const token = this.props.token;
+
+      document.getElementById('mealDetailFlyer').className = classes.withAddAni;
       this.props.addToBasket(id, count, token);
     };
     onSelectHandler = e => {
@@ -53,6 +56,7 @@ export default connect(
               src={require('../../assets/images/MealDetail/panda.png')}
               alt=''
             />
+
             <img
               className={classes.latern}
               src={require('../../assets/images/MealDetail/lantern.png')}
@@ -107,6 +111,12 @@ export default connect(
                     }>
                     Add to Basket
                   </Button>
+                  <img
+                    className={classes.cartIcon}
+                    id={'mealDetailFlyer'}
+                    src={require('../../assets/images/MealList/bamboo.png')}
+                    alt=''
+                  />
                 </div>
               </div>
             </div>

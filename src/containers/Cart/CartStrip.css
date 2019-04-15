@@ -141,6 +141,7 @@
 
 @media only screen and (max-width: 1200px) {
   .container > div {
+    grid-row-gap: 20px;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }

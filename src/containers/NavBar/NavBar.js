@@ -63,17 +63,7 @@ export default connect(
                     />
                   </p>
                 </NavLink>
-                <NavLink to='/my-info'>
-                  <p>
-                    {' '}
-                    <span>></span>
-                    <span>My Info</span>
-                    <img
-                      src={require('../../assets/images/NavBar/3.png')}
-                      alt='myinfo'
-                    />
-                  </p>
-                </NavLink>
+
                 <NavLink to='/about-us'>
                   <p>
                     <span>></span>

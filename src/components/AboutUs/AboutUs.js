@@ -2,17 +2,22 @@ import React from 'react';
 import Modal from '../../hoc/Modal/Modal';
 import GoogleMapReact from 'google-map-react';
 import classes from './AboutUs.css';
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+import MapMarker from '../../UI/MapMarker/MapMarker';
 export default function AboutUs({
   center = {
-    lat: 59.95,
-    lng: 30.33
+    lat: 43.04872179240851,
+    lng: -76.1333629488945
   },
-  zoom = 11
+  zoom = 16
 }) {
   return (
     <Modal>
       <div className={classes.container}>
+        <img
+          src={require('../../assets/images/MealDetail/panda.png')}
+          alt='panda'
+          className={classes.panda}
+        />
         <img
           src={require('../../assets/images/MealList/logo.png')}
           className={classes.icon}
@@ -29,54 +34,60 @@ export default function AboutUs({
             }}
             defaultCenter={center}
             defaultZoom={zoom}>
-            <AnyReactComponent
-              lat={59.955413}
-              lng={30.337844}
+            <MapMarker
+              lat={43.04872179240851}
+              lng={-76.1333629488945}
               text='My Marker'
             />
           </GoogleMapReact>
         </div>
         <div className={classes.contact}>
+          <strong
+            style={{
+              paddingBottom: '20px',
+              paddingTop: '5px',
+              display: 'block',
+              color: '#E5001C',
+              textAlign: 'left'
+            }}>
+            1113 E Fayette St, Syracuse, NY 13210
+          </strong>
           <p>
-            <img src={require('../../assets/images/NavBar/6.png')} alt='' />
+            <img
+              src={require('../../assets/images/NavBar/6.png')}
+              alt='phone'
+            />
             <span>6072325699</span>
           </p>
 
           <p>
             <img
               src={require('../../assets/images/AboutUs/email.png')}
-              alt=''
+              alt='email'
             />
             <span>laochengdu@gmail.com</span>
           </p>
         </div>
         <div className={classes.main}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-          aspernatur nobis vel nostrum natus, nam recusandae sit repellendus a
-          doloremque porro possimus distinctio explicabo, animi laudantium odit?
-          Mollitia, illo eaque? Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Quae aspernatur nobis vel nostrum natus, nam
-          recusandae sit repellendus a doloremque porro possimus distinctio
-          explicabo, animi laudantium odit? Mollitia, illo eaque? Lorem ipsum
-         fugit? Itaque,
-          laborum molestiae. Quae soluta maiores labore neque ex voluptas
-          doloribus ratione enim. Quidem sunt sequi est quas ipsa alias magnam
-          repellat autem repudiandae deleniti! Facere aliquam eveniet illo
-          reiciendis, et officiis veritatis! Eos odio, omnis numquam qui atque
-          quo provident, vel fuga hic libero accusantium. Quam praesentium
-          dolore voluptatem officiis delectus assumenda, commodi totam error
-          eius, modi quis quae laboriosam soluta architecto? Officia aperiam
-          praesentium placeat facere ea officiis iure molestias hic nulla ut,
-          deserunt dicta accusantium consequuntur delectus mollitia architecto
-          voluptatum, veniam nobis expedita rerum nemo perferendis nisi
-          veritatis! Laboriosam, quaerat. Quod doloremque corrupti facilis dolor
-          officia asperiores molestias error, sequi quidem deserunt!
-          Exercitationem, consequatur maiores? Necessitatibus magnam dignissimos
-          ad libero, at labore illum numquam sed, qui odio pariatur neque enim.
-          Autem, sed nostrum maiores sequi modi rerum pariatur ipsum voluptate
-          perspiciatis reprehenderit quae minima natus nemo ex sunt cum fugiat.
-          Reiciendis beatae voluptas, aut pariatur recusandae rem saepe sit
-          aliquam?
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            similique assumenda iste expedita inventore beatae aut alias optio!
+            Nesciunt veritatis quos, nostrum eos similique perferendis delectus
+            impedit illum repudiandae perspiciatis. Sequi autem in dicta earum
+            vitae sapiente quisquam, sint consequuntur dolore officia debitis
+            delectus, similique iste quasi corrupti modi tenetur magnam iure ab
+            rerum. Odio eum minus dolore vero numquam. Quae illum ipsum
+            inventore vero in magnam dolor dolore est? Laudantium magnam
+            doloribus sint et fugit sapiente voluptate. Amet, recusandae
+            voluptates fuga voluptatem dicta consectetur modi sit dolorum.
+            Eaque, saepe! Nihil quasi itaque quaerat ducimus obcaecati quas
+            vitae optio quo? Nobis eaque laborum architecto ipsa quisquam atque
+            quibusdam. Nam saepe vitae nisi velit itaque enim dicta mollitia in
+            reprehenderit nulla. Atque, quas qui autem in tenetur rem doloribus
+            inventore enim labore, odio omnis accusamus tempore dolores!
+            Adipisci, exercitationem libero assumenda ullam, fugiat id quaerat
+            rerum voluptas cumque praesentium esse vero.
+          </p>
         </div>
       </div>
     </Modal>

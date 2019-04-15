@@ -1,10 +1,11 @@
 .container {
+  z-index: 2;
   display: -ms-grid;
   display: grid;
       grid-template-areas: 'icon icon icon' 'header header header ' 'h2 h2 h2' 'positionMap main main' 'contact main main';
   width: 80%;
   margin: auto;
-  grid-gap: 0 10px;
+  grid-gap: 5px 40px;
   text-align: center;
 }
 
@@ -19,12 +20,25 @@
   grid-area: icon;
 }
 
+.container .panda {
+  z-index: 1;
+  position: absolute;
+  right: -1%;
+  bottom: 0;
+  width: 15%;
+}
+
+.container p {
+  text-align: left;
+}
+
 .container h2 {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: h2;
   padding-bottom: 50px;
+  color: green;
 }
 
 .container .contact {
@@ -35,11 +49,10 @@
 
 .container .contact p {
   font-size: 1.5em;
-  text-align: left;
 }
 
 .container .contact p img {
-  width: 10%;
+  width: 30px;
 }
 
 .container .contact p span {
@@ -72,6 +85,9 @@
 }
 
 @media only screen and (max-width: 1500px) {
+  .container {
+    grid-column-gap: 10px;
+  }
   .container .contact p {
     font-size: 1em;
   }
@@ -93,7 +109,7 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   .container {
     width: 90%;
     grid-column-gap: 0;
@@ -102,8 +118,8 @@
   .container .icon {
     width: 20%;
   }
-  .container header {
-    font-size: 1.5em;
+  .container header h1 {
+    font-size: 1.2em;
   }
   .container h2 {
     font-size: 1.1em;
@@ -121,7 +137,7 @@
     margin: 10px auto;
   }
   .container .contact {
-    padding-top: 5px;
+    padding: 5px 0 20px 0;
   }
 }
 /*# sourceMappingURL=AboutUs.css.map */

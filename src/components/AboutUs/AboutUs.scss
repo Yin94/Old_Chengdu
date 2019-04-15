@@ -1,11 +1,12 @@
 .container {
+  z-index: 2;
   display: grid;
   grid-template-areas:
     'icon icon icon'
     'header header header ' 'h2 h2 h2' 'positionMap main main' 'contact main main';
   width: 80%;
   margin: auto;
-  grid-gap: 0 10px;
+  grid-gap: 5px 40px;
   text-align: center;
   .icon {
     width: 15%;
@@ -14,18 +15,28 @@
     top: 5%;
     grid-area: icon;
   }
+  .panda {
+    z-index: 1;
+    position: absolute;
+    right: -1%;
+    bottom: 0;
+    width: 15%;
+  }
+  p {
+    text-align: left;
+  }
   h2 {
     grid-area: h2;
     padding-bottom: 50px;
+    color: green;
   }
   .contact {
     grid-area: contact;
 
     p {
       font-size: 1.5em;
-      text-align: left;
       img {
-        width: 10%;
+        width: 30px;
       }
       span {
         padding-left: 10px;
@@ -49,6 +60,7 @@
 
 @media only screen and (max-width: 1500px) {
   .container {
+    grid-column-gap: 10px;
     .contact {
       p {
         font-size: 1em;
@@ -75,13 +87,15 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   .container {
     .icon {
       width: 20%;
     }
     header {
-      font-size: 1.5em;
+      h1 {
+        font-size: 1.2em;
+      }
     }
     h2 {
       font-size: 1.1em;
@@ -102,7 +116,7 @@
       margin: 10px auto;
     }
     .contact {
-      padding-top: 5px;
+      padding: 5px 0 20px 0;
     }
     grid-template-areas:
       'icon icon icon'
