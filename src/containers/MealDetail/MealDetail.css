@@ -69,6 +69,7 @@
 .container .mainArea .mainPic img {
   width: 100%;
   max-width: 1000px;
+  cursor: pointer;
 }
 
 .container .mainArea .detail {

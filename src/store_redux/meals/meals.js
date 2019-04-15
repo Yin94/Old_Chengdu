@@ -3,7 +3,7 @@ import { fetchList, queryMeal } from '../../db/meals';
 import { addListItem } from '../../db/basket';
 const initialState = {
   list: [],
-  cur: {},
+  cur: null,
   totalCount: 0,
   error: false,
   pageIndex: 0,

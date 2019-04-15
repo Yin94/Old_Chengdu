@@ -1,11 +1,13 @@
 import React, { Component, createRef } from 'react';
 import classes from './MealDetail.css';
+import Modal from './Modal/Modal';
 import Button from '../../UI/Button/Button';
 import SpicePanel from '../../components/SpicePanel/SpicePanel';
 import {
   startQueryMeal,
   startAddToBasket
 } from '../../store_redux/meals/meals';
+import LoadingModal from '../../UI/LoadingModal/LoadingModal';
 import { connect } from 'react-redux';
 
 const mps = state => ({
@@ -27,7 +29,9 @@ export default connect(
 )(
   class MealDetail extends Component {
     state = {
-      count: 1
+      count: 1,
+      mode: 0,
+      index: 0
     };
     countRef = createRef();
 
@@ -35,11 +39,32 @@ export default connect(
       if (this.props.currentMeal === {}) return;
       const id = this.props.match.params.id;
       this.props.fetchMeal(id);
+      //
+      window.addEventListener(
+        'keyup',
+        e => this.onModalKeyPressHandler(e),
+        false
+      );
     }
-
+    componentWillUnmount = () => {
+      window.removeEventListener('keyup', this.onCloseModalHandler, false);
+    };
+    onModalKeyPressHandler = e => {
+      const key = e.keyCode;
+      if (key === 27) this.onCloseModalHandler();
+      if (key === 37 && this.state.index !== 0)
+        this.setState(prevState => ({ index: prevState.index - 1 }));
+      if (
+        key === 39 &&
+        this.state.index !== this.props.currentMeal.imgs.length - 1
+      )
+        this.setState(prevState => ({ index: prevState.index + 1 }));
+    };
+    onCloseModalHandler = () => {
+      this.setState({ mode: false });
+    };
     onAddHandler = (id, count) => {
       const token = this.props.token;
-
       document.getElementById('mealDetailFlyer').className = classes.withAddAni;
       this.props.addToBasket(id, count, token);
     };
@@ -47,10 +72,23 @@ export default connect(
       const count = e.target.value;
       this.setState({ count });
     };
+    onImgChangeHandler = index => {
+      this.setState({ index });
+    };
     render() {
       const meal = this.props.currentMeal;
-      return (
+      return !this.props.currentMeal ? (
+        <LoadingModal />
+      ) : (
         <div className={classes.container}>
+          {this.state.mode && (
+            <Modal
+              closed={this.onCloseModalHandler}
+              imgs={meal.imgs}
+              index={this.state.index}
+              selected={this.onImgChangeHandler}
+            />
+          )}
           <div className={classes.modal}>
             <img
               src={require('../../assets/images/MealDetail/panda.png')}
@@ -64,7 +102,13 @@ export default connect(
             />
             <div className={classes.mainArea}>
               <div className={classes.mainPic}>
-                <img src={meal.img} alt='' />
+                <img
+                  onClick={() => {
+                    this.setState({ mode: true });
+                  }}
+                  src={meal.imgs[this.state.index]}
+                  alt='mainImg'
+                />
               </div>
               <div className={classes.detail}>
                 <h2>{meal.name}</h2>
@@ -84,6 +128,7 @@ export default connect(
                       <option value={1}>1</option>
                       <option value={2}>2</option>
                       <option value={3}>3</option>
+
                       <option value={4}>4</option>
                       <option value={5}>5</option>
                       <option value={6}>6</option>

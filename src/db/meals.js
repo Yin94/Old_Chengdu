@@ -16,6 +16,7 @@ export async function fetchList(mode, pageIndex, query) {
       ele.id = id;
       delete ele._id;
     });
+    console.log(meals[1]);
     return meals;
   } catch (error) {
     console.log(error.message);
