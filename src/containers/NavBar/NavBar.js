@@ -74,17 +74,6 @@ export default connect(
                     />
                   </p>
                 </NavLink>
-                <NavLink to='/contact'>
-                  <p>
-                    {' '}
-                    <span>></span>
-                    <span>Contact</span>
-                    <img
-                      src={require('../../assets/images/NavBar/6.png')}
-                      alt='contact'
-                    />
-                  </p>
-                </NavLink>
 
                 <NavLink to='/auth/1' onClick={this.onLogOutHandler}>
                   <p>

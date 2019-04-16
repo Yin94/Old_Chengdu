@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import classes from './Modal.css';
 let touchStartPos = 0;
 export default class Modal extends Component {
@@ -24,13 +24,11 @@ export default class Modal extends Component {
 
   render() {
     const gallery = this.props.imgs.map((ele, i) => (
-      <img
-        onClick={() => this.props.selected(i)}
-        src={ele}
-        alt={i}
-        key={ele + i}
-      />
+      <Link key={ele + i} onClick={() => this.props.selected(i)}>
+        <img src={ele} alt={i} />
+      </Link>
     ));
+
     return (
       <div className={classes.container}>
         <div className={classes.main}>

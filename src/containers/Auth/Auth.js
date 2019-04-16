@@ -241,6 +241,7 @@ export default connect(
                     Submit
                   </Button>
                 </div>
+                <small>All rights reserved Lao Chengdu restaurant</small>
               </form>
             </div>
           </>

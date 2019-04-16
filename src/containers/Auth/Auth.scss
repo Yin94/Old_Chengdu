@@ -22,16 +22,23 @@
   background-size: cover;
   border-radius: 0;
   background-position: center;
-  background-image: url('../../assets/images/Auth/background.jpg');
+  background-image: url('../../assets/images/Cart/bg.jpg');
   position: relative;
   form {
+    small {
+      text-align: right;
+      font-weight: bold;
+      color: black;
+      padding: 10px 0 0 0;
+      display: block;
+    }
     animation-name: fadein;
     animation-duration: 1s;
     opacity: 0.95;
     width: 80%;
     max-width: 500px;
     position: absolute;
-    padding: 30px 10px 10px 10px;
+    padding: 25px 10px 10px 10px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);

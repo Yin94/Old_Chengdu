@@ -25,7 +25,7 @@
   background-size: cover;
   border-radius: 0;
   background-position: center;
-  background-image: url("../../assets/images/Auth/background.jpg");
+  background-image: url("../../assets/images/Cart/bg.jpg");
   position: relative;
 }
 
@@ -38,13 +38,21 @@
   width: 80%;
   max-width: 500px;
   position: absolute;
-  padding: 30px 10px 10px 10px;
+  padding: 25px 10px 10px 10px;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background-color: white;
   text-align: center;
+}
+
+.container form small {
+  text-align: right;
+  font-weight: bold;
+  color: black;
+  padding: 10px 0 0 0;
+  display: block;
 }
 
 .container form ul {

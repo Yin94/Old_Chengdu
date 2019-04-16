@@ -223,6 +223,9 @@
 }
 
 @media only screen and (max-width: 400px) {
+  .container {
+    width: 85%;
+  }
   .container .sleepingPanda {
     padding-top: 50%;
   }
