@@ -25,7 +25,7 @@ class App extends Component {
   render() {
     return (
       <div id='app'>
-        <Suspense fallback={<div>loading lazy component...</div>}>
+        <Suspense fallback={<div />}>
           {!this.props.token && !localStorage.getItem('auth') ? (
             <>
               <Switch>

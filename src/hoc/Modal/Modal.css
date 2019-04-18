@@ -23,11 +23,6 @@
 }
 @media only screen and (max-width: 400px) {
   .main {
-    .gallery {
-      img {
-        width: 10vw;
-      }
-    }
     width: 100%;
   }
 }
