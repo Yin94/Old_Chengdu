@@ -18,17 +18,13 @@
 }
 
 .container .main .searchBar {
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  width: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  width: 60%;
+  margin: auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 3fr 1fr;
       grid-template-columns: 3fr 1fr;
-  padding: 20px 0;
+  padding: 20px 0 40px 0;
 }
 
 .container .main .searchBar * {
@@ -68,7 +64,6 @@
   top: 10px;
   left: 5%;
   display: inline-block;
-  padding-bottom: 100px;
 }
 
 .container .main div[id='mealList'] {

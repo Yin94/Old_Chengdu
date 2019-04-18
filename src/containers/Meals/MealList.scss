@@ -14,14 +14,11 @@
     border-radius: 0;
     background-color: rgba(245, 222, 179, 0.8);
     .searchBar {
-      position: absolute;
-      top: 15%;
-      left: 50%;
-      width: 50%;
-      transform: translate(-50%, 0);
+      width: 60%;
+      margin: auto;
       display: grid;
       grid-template-columns: 3fr 1fr;
-      padding: 20px 0;
+      padding: 20px 0 40px 0;
       * {
         border: 0;
         padding: 10px;
@@ -56,7 +53,7 @@
       top: 10px;
       left: 5%;
       display: inline-block;
-      padding-bottom: 100px;
+      // padding-bottom: 100px;
     }
     div[id='mealList'] {
       position: relative;

@@ -10,6 +10,7 @@
 
 .pagiPanel button {
   width: 8%;
+  padding: 10px;
 }
 .pagiPanel button:disabled {
   background-color: #ffff;
@@ -17,4 +18,13 @@
 }
 .pagiPanel > startNend {
   width: 7%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .pagiPanel {
+    width: 100%;
+  }
+  .pagiPanel button {
+    padding: 0;
+  }
 }
