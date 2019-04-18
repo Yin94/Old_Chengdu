@@ -54,14 +54,14 @@ export default function(state = initialState, action) {
       return state;
   }
 }
-//
+
 const SET_LIST = 'basket/SET_LIST';
 const LOG_OUT = 'basket/LOG_OUT';
 const SET_LOADING = 'basket/SET_LOADING';
 const ERROR_LIST = 'basket/ERROR_LIST';
 const RESET_STATUS = 'basket/RESET_STATUS';
 const ADD_ITEM_SUCCEED = 'basket/ADD_ITEM_SUCCEED';
-//
+
 export function startFetchList(token) {
   return async dispatch => {
     dispatch({ type: SET_LOADING });
@@ -72,7 +72,7 @@ export function startFetchList(token) {
     else dispatch({ type: SET_LIST, list });
   };
 }
-//
+
 export function startDeleteItem(id, token) {
   return async dispatch => {
     const err = await deleteItem(id, token);

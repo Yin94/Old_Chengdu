@@ -33,7 +33,6 @@ export async function deleteItem(id, token) {
 }
 export async function clearCart(token) {
   try {
-    console.log(token);
     await httpClient.put('cart/', null, { headers: { token } });
     return [];
   } catch (error) {

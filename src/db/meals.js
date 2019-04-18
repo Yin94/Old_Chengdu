@@ -9,7 +9,6 @@ export async function fetchList(mode, pageIndex, query) {
   try {
     result = await httpClient.get(url);
     if (mode) return result.data.count;
-    //
     const meals = [...result.data];
     meals.forEach(ele => {
       const id = ele._id;
@@ -19,7 +18,6 @@ export async function fetchList(mode, pageIndex, query) {
 
     return meals;
   } catch (error) {
-    console.log(error.message);
     return error;
   }
 }
@@ -32,7 +30,6 @@ export async function queryMeal(id) {
     result.id = id;
     return result;
   } catch (error) {
-    console.log(error.message);
     return error;
   }
 }

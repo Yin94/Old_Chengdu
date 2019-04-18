@@ -51,7 +51,6 @@ export default connect(
         if (this.props.match.params['mode'] === '1') {
           try {
             await Joi.validate({ email, password }, loginSchema);
-            //TODO: submit logic
             const user = await signInWithEmail(email, password);
             if (user === 1) {
               const errorBlocks = { ...this.state.errorBlocks };
@@ -62,7 +61,6 @@ export default connect(
               errorBlocks['email'] = 'This email has not been signed up yet';
               this.setState({ errorBlocks });
             } else {
-              //redux stuff;
               localStorage.setItem('auth', JSON.stringify(user));
 
               this.props.setAuth(user);
@@ -78,7 +76,6 @@ export default connect(
         } else {
           try {
             await Joi.validate({ email, password, ...others }, signupSchema);
-            //TODO: submit logic
             const user = await signUpWithEmail({ email, password, ...others });
             if (parseInt(user) === user) {
               const errorBlocks = { ...this.state.errorBlocks };
@@ -89,7 +86,6 @@ export default connect(
               this.setState({ errorBlocks });
               this.props.setLoading(0);
             } else {
-              //redux
               localStorage.setItem('auth', JSON.stringify(user));
               this.props.setLoading(0);
 

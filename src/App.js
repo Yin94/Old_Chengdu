@@ -3,7 +3,6 @@ import './App.css';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import { SET_AUTH_DATA } from './store_redux/auth/auth';
 import { connect } from 'react-redux';
-//
 const Auth = React.lazy(() => import('./containers/Auth/Auth'));
 const Meals = React.lazy(() => import('./containers/Meals/Meals'));
 const NavBar = React.lazy(() => import('./containers/NavBar/NavBar'));

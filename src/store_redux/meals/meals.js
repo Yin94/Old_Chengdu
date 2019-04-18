@@ -49,13 +49,13 @@ export default function(state = initialState, action) {
       return state;
   }
 }
-//
+
 const SET_LIST = 'meals/SET_LIST';
 const SET_LOADING = 'meals/SET_LOADING';
 const ERROR_LIST = 'meals/ERROR_LIST';
 const SET_CURRENT = 'meals/SET_CURRENT';
 const SET_COUNT = 'meals/SET_COUNT';
-//
+
 export function startFetchList(pageIndex, query, firstSearch = true) {
   return async dispatch => {
     dispatch({ type: SET_LOADING });

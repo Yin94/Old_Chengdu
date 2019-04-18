@@ -40,7 +40,6 @@ export default connect(
       if (this.props.currentMeal === {}) return;
       const id = this.props.match.params.id;
       this.props.fetchMeal(id);
-      //
       window.addEventListener(
         'keyup',
         e => this.onModalKeyPressHandler(e),
