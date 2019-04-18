@@ -52,16 +52,57 @@
 }
 
 .container .mainArea .mainPic {
-  text-align: center;
   position: relative;
   overflow: hidden;
   -webkit-animation: slideInLeft 0.7s ease-in-out;
           animation: slideInLeft 0.7s ease-in-out;
+  width: 100%;
+}
+
+.container .mainArea .mainPic .mainPicContainer {
+  padding-bottom: 70%;
+  position: relative;
+}
+
+.container .mainArea .mainPic .mainPicContainer img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.container .mainArea .mainPic .gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 5px;
+  padding-top: 10px;
+}
+
+.container .mainArea .mainPic .gallery div {
+  width: 100%;
+  padding-top: 100%;
+  /* 1:1 Aspect Ratio */
+  position: relative;
+}
+
+.container .mainArea .mainPic .gallery div img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+}
+
+.container .mainArea .mainPic .gallery div img:hover {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
 }
 
 .container .mainArea .mainPic img {
   width: 100%;
-  max-width: 1000px;
   cursor: pointer;
 }
 
@@ -93,12 +134,12 @@
   border-radius: 0;
   width: 90%;
   margin: auto;
-  margin-top: 5%;
+  margin-top: 15%;
   margin-bottom: 10px;
 }
 
 .container .mainArea .detail .specs > * {
-  margin-top: 10%;
+  margin-top: 20%;
   margin-bottom: 10%;
   font-size: 1.5em;
 }
@@ -141,6 +182,7 @@
   border: 0;
   padding: 5%;
   margin: 0 auto;
+  margin-top: 20%;
   color: white;
   font-size: 1.2em;
   background-color: green;
@@ -299,12 +341,25 @@
   .container .modal .mainArea .selectPanel {
     font-size: 1em;
   }
+  .container .modal .mainArea .selectPanel small {
+    margin: 0;
+  }
   .container .modal .mainArea .selectPanel select {
+    width: 80%;
     border: 0;
+    margin: 0;
     padding: 2px;
+  }
+  .container .modal .mainArea .specs {
+    margin-top: 5%;
+  }
+  .container .modal .mainArea .specs * {
+    margin: 5% auto;
   }
   .container .modal .mainArea .specs button {
     font-size: 1em;
+    margin-top: 5%;
+    padding: 0;
   }
   .container .modal .mainArea .detail h2 {
     font-size: 1.5em;

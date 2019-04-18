@@ -7,7 +7,7 @@ import { startQueryMeal } from '../../store_redux/meals/meals';
 import { startAddToBasket, resetStatus } from '../../store_redux/basket/basket';
 import LoadingModal from '../../UI/LoadingModal/LoadingModal';
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 const mps = state => ({
   token: state.auth.token,
   list: state.meals.list,
@@ -76,6 +76,11 @@ export default connect(
     onImgChangeHandler = index => {
       this.setState({ index });
     };
+    galleryClickHandler = index => {
+      this.setState({
+        index
+      });
+    };
     render() {
       const meal = this.props.currentMeal;
       if (this.props.addItemSucceed) {
@@ -84,8 +89,8 @@ export default connect(
           this.btnTextRef.current.innerHTML = '<span>Add to Basket</span>';
         }, 1000);
       }
-      this.props.resetStatus();
 
+      this.props.resetStatus();
       return !this.props.currentMeal ? (
         <LoadingModal />
       ) : (
@@ -111,13 +116,24 @@ export default connect(
             />
             <div className={classes.mainArea}>
               <div className={classes.mainPic}>
-                <img
-                  onClick={() => {
-                    this.setState({ mode: true });
-                  }}
-                  src={meal.imgs[this.state.index]}
-                  alt='mainImg'
-                />
+                <div className={classes.mainPicContainer}>
+                  <img
+                    onClick={() => {
+                      this.setState({ mode: true });
+                    }}
+                    src={meal.imgs[this.state.index]}
+                    alt='mainImg'
+                  />
+                </div>
+                <div className={classes.gallery}>
+                  {meal.imgs.map((ele, i) => (
+                    <div
+                      key={ele + i}
+                      onClick={() => this.galleryClickHandler(i)}>
+                      <img src={ele} alt={i} />
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className={classes.detail}>
                 <h2>{meal.name}</h2>
@@ -139,7 +155,6 @@ export default connect(
                       <option value={1}>1</option>
                       <option value={2}>2</option>
                       <option value={3}>3</option>
-
                       <option value={4}>4</option>
                       <option value={5}>5</option>
                       <option value={6}>6</option>
