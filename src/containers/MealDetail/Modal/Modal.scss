@@ -35,6 +35,8 @@
     width: 30vw;
     grid-column-gap: 5px;
     position: absolute;
+    text-align: center;
+
     bottom: 5%;
     left: 50%;
     transform: translate(-50%, 0);
@@ -43,16 +45,34 @@
     }
     img {
       display: inline-block;
-      width: 5vw;
-      height: 5vw;
+      width: 7vw;
+      height: 7vw;
     }
   }
 }
-
+@media only screen and (max-width: 800px) {
+  .container {
+    .gallery {
+      width: 80vw;
+      img {
+        width: 15vw;
+        height: 15vw;
+      }
+    }
+  }
+}
 @media only screen and (max-width: 400px) {
   .container {
     width: 100%;
     z-index: 3;
+    .gallery {
+      width: 80vw;
+
+      img {
+        width: 20vw;
+        height: 20vw;
+      }
+    }
     .main {
       position: absolute;
       top: 50%;
