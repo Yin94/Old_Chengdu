@@ -8,13 +8,6 @@
   background-image: url("http://bpic.588ku.com/back_pic/05/55/81/035b161b2c96b6d.jpg");
 }
 
-.container .cartIcon {
-  position: absolute;
-  top: 0;
-  width: 20%;
-  z-index: 1;
-}
-
 .container .modal {
   width: 90%;
   max-width: 2000px;
@@ -135,6 +128,25 @@
   display: block;
 }
 
+.container .mainArea .detail .specs button {
+  grid-area: btn;
+  display: block;
+  width: 80%;
+  border: 0;
+  padding: 5%;
+  margin: 0 auto;
+  color: white;
+  font-size: 1.2em;
+  background-color: green;
+  overflow: hidden;
+}
+
+.container .mainArea .detail .specs button p span {
+  position: relative;
+  -webkit-animation: fadeIn 1s ease-in-out;
+          animation: fadeIn 1s ease-in-out;
+}
+
 @-webkit-keyframes addItem {
   from {
     left: 0;
@@ -247,6 +259,9 @@
   .container .modal > img {
     width: 20%;
   }
+  .container .modal .detail h2 {
+    font-size: 1.8em;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -257,10 +272,16 @@
   .container .modal .mainArea > img {
     width: 25%;
   }
+  .container .modal .mainArea .detail h2 {
+    font-size: 2.5em;
+  }
 }
 
 @media only screen and (max-width: 400px) {
-  .container .modal > img {
+  .container .modal .mainArea .detail h2 {
+    font-size: 1.5em;
+  }
+  .container .modal .mainArea > img {
     width: 30%;
   }
 }

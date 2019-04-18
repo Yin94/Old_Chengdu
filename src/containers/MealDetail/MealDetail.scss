@@ -5,12 +5,7 @@
   background-size: contain;
   overflow: auto;
   background-image: url('http://bpic.588ku.com/back_pic/05/55/81/035b161b2c96b6d.jpg');
-  .cartIcon {
-    position: absolute;
-    top: 0;
-    width: 20%;
-    z-index: 1;
-  }
+
   .modal {
     width: 90%;
     max-width: 2000px;
@@ -108,6 +103,24 @@
           text-align: center;
           display: block;
         }
+        button {
+          grid-area: btn;
+          display: block;
+          width: 80%;
+          border: 0;
+          padding: 5%;
+          margin: 0 auto;
+          color: white;
+          font-size: 1.2em;
+          background-color: green;
+          overflow: hidden;
+          p {
+            span {
+              position: relative;
+              animation: fadeIn 1s ease-in-out;
+            }
+          }
+        }
       }
     }
   }
@@ -172,6 +185,11 @@
       > img {
         width: 20%;
       }
+      .detail {
+        h2 {
+          font-size: 1.8em;
+        }
+      }
     }
   }
 }
@@ -183,6 +201,11 @@
         > img {
           width: 25%;
         }
+        .detail {
+          h2 {
+            font-size: 2.5em;
+          }
+        }
       }
     }
   }
@@ -191,8 +214,15 @@
 @media only screen and (max-width: 400px) {
   .container {
     .modal {
-      > img {
-        width: 30%;
+      .mainArea {
+        .detail {
+          h2 {
+            font-size: 1.5em;
+          }
+        }
+        > img {
+          width: 30%;
+        }
       }
     }
   }

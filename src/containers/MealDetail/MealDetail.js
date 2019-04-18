@@ -3,17 +3,17 @@ import classes from './MealDetail.css';
 import Modal from './Modal/Modal';
 import Button from '../../UI/Button/Button';
 import SpicePanel from '../../components/SpicePanel/SpicePanel';
-import {
-  startQueryMeal,
-  startAddToBasket
-} from '../../store_redux/meals/meals';
+import { startQueryMeal } from '../../store_redux/meals/meals';
+import { startAddToBasket, resetStatus } from '../../store_redux/basket/basket';
 import LoadingModal from '../../UI/LoadingModal/LoadingModal';
 import { connect } from 'react-redux';
 
 const mps = state => ({
   token: state.auth.token,
   list: state.meals.list,
-  currentMeal: state.meals.cur
+  currentMeal: state.meals.cur,
+  succeed: state.basket.succeed,
+  addItemSucceed: state.basket.addItemSucceed
 });
 const mpd = dispatch => ({
   fetchMeal: id => {
@@ -21,7 +21,8 @@ const mpd = dispatch => ({
   },
   addToBasket: (id, count, token) => {
     dispatch(startAddToBasket(id, count, token));
-  }
+  },
+  resetStatus: () => dispatch(resetStatus())
 });
 export default connect(
   mps,
@@ -34,7 +35,7 @@ export default connect(
       index: 0
     };
     countRef = createRef();
-
+    btnTextRef = createRef();
     componentDidMount() {
       if (this.props.currentMeal === {}) return;
       const id = this.props.match.params.id;
@@ -65,7 +66,7 @@ export default connect(
     };
     onAddHandler = (id, count) => {
       const token = this.props.token;
-      document.getElementById('mealDetailFlyer').className = classes.withAddAni;
+
       this.props.addToBasket(id, count, token);
     };
     onSelectHandler = e => {
@@ -77,6 +78,14 @@ export default connect(
     };
     render() {
       const meal = this.props.currentMeal;
+      if (this.props.addItemSucceed) {
+        this.btnTextRef.current.innerHTML = '<span>&#10003;</span>';
+        setTimeout(() => {
+          this.btnTextRef.current.innerHTML = '<span>Add to Basket</span>';
+        }, 1000);
+      }
+      this.props.resetStatus();
+
       return !this.props.currentMeal ? (
         <LoadingModal />
       ) : (
@@ -138,30 +147,16 @@ export default connect(
                       <option value={10}>10</option>
                     </select>
                   </div>
+
                   <Button
                     btn
-                    style={{
-                      gridArea: 'btn',
-                      display: 'block',
-                      width: '80%',
-                      border: '0',
-                      padding: '5%',
-                      margin: '0 auto',
-                      color: 'white',
-                      fontSize: '1.2em',
-                      backgroundColor: 'green'
-                    }}
                     onClick={() =>
                       this.onAddHandler(meal.id, this.state.count)
                     }>
-                    Add to Basket
+                    <p ref={this.btnTextRef}>
+                      <span>Add to Basket</span>
+                    </p>
                   </Button>
-                  <img
-                    className={classes.cartIcon}
-                    id={'mealDetailFlyer'}
-                    src={require('../../assets/images/MealList/bamboo.png')}
-                    alt=''
-                  />
                 </div>
               </div>
             </div>

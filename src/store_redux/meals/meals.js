@@ -1,6 +1,5 @@
 import combine from '../../utility/combine';
 import { fetchList, queryMeal } from '../../db/meals';
-import { addListItem } from '../../db/basket';
 const initialState = {
   list: [],
   cur: null,
@@ -75,11 +74,5 @@ export function startQueryMeal(id) {
     const meal = await queryMeal(id);
     if (meal instanceof Error) dispatch({ type: ERROR_LIST });
     else dispatch({ type: SET_CURRENT, meal });
-  };
-}
-
-export function startAddToBasket(id, count, token) {
-  return async dispatch => {
-    await addListItem(id, count, token);
   };
 }

@@ -25,7 +25,6 @@ export async function addListItem(mealId, count, token) {
 
 export async function deleteItem(id, token) {
   try {
-    console.log(id, token);
     await httpClient.delete('cart/' + id, { headers: { token } });
     return null;
   } catch (error) {
