@@ -30,8 +30,8 @@ function LOGOUT(state) {
 function loading(state) {
   return combine(state, { loading: true, error: false });
 }
-function error(state) {
-  return combine(state, { error: true });
+function error(state, error) {
+  return combine(state, { error });
 }
 function reset() {
   return combine(initialState);
@@ -45,7 +45,7 @@ export default function(state = initialState, action) {
     case SET_LOADING:
       return loading(state);
     case ERROR_LIST:
-      return error(state);
+      return error(state, action.message);
     case RESET_STATUS:
       return reset();
     case ADD_ITEM_SUCCEED:
@@ -67,7 +67,8 @@ export function startFetchList(token) {
     dispatch({ type: SET_LOADING });
     if (!token) token = JSON.parse(localStorage.getItem('auth')).token;
     const list = await fetchList(token);
-    if (list instanceof Error) dispatch({ type: ERROR_LIST });
+    if (list instanceof Error)
+      dispatch({ type: ERROR_LIST, message: 'invalid token' });
     else dispatch({ type: SET_LIST, list });
   };
 }

@@ -4,18 +4,20 @@ import Button from '../../UI/Button/Button';
 import CartList from './CartList/CartList';
 import { connect } from 'react-redux';
 import LoadingModal from '../../UI/LoadingModal/LoadingModal';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import {
   startFetchList,
   startDeleteItem,
   startClearBasket,
   resetStatus
 } from '../../store_redux/basket/basket';
+import { logOut } from '../../store_redux/auth/auth';
 const mps = state => ({
   token: state.auth.token,
   list: state.basket.list,
   loading: state.basket.loading,
-  succeed: state.basket.succeed
+  succeed: state.basket.succeed,
+  error: state.basket.error
 });
 const mpd = dispatch => ({
   resetStatus: () => dispatch(resetStatus()),
@@ -27,7 +29,8 @@ const mpd = dispatch => ({
   },
   clearBasket: token => {
     dispatch(startClearBasket(token));
-  }
+  },
+  logOut: () => dispatch(logOut())
 });
 export default connect(
   mps,
@@ -52,6 +55,10 @@ export default connect(
       this.props.deleteItem(id, this.props.token);
     };
     render() {
+      if (this.props.error === 'invalid token') {
+        this.props.logOut();
+        return <Redirect to='auth/1' />;
+      }
       const list = this.props.list;
       const total = list.reduce(
         (prev, current) => prev + current.meal.price * current.count,
