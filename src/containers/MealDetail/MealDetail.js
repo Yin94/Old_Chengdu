@@ -121,6 +121,8 @@ export default connect(
               </div>
               <div className={classes.detail}>
                 <h2>{meal.name}</h2>
+                <p>{meal.chineseName}</p>
+
                 <div className={classes.specs}>
                   <SpicePanel spiceDegree={5} />
                   <p className={classes.MonthlyCount}>

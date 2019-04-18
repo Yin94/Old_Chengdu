@@ -10,7 +10,7 @@
 .container {
   -webkit-animation: fadeIn 1s;
           animation: fadeIn 1s;
-  width: 80%;
+  width: 97%;
   min-height: 100vh;
   margin: 0 auto;
   background-color: rgba(211, 211, 211, 0.8);
@@ -198,6 +198,12 @@
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+  .container .main .list div p {
+    font-size: 0.9em;
+  }
+  .container .main .list div p a:hover {
+    color: #890011;
+  }
   .container .main .desc {
     width: 80%;
     margin: auto;
@@ -224,7 +230,7 @@
 
 @media only screen and (max-width: 400px) {
   .container {
-    width: 85%;
+    width: 100%;
   }
   .container .sleepingPanda {
     padding-top: 50%;
@@ -233,6 +239,8 @@
     font-size: 1.2em;
   }
   .container .main {
+    width: 90%;
+    margin: auto;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
@@ -268,11 +276,11 @@
     margin: auto;
   }
   .container .main .desc button {
-    float: none;
-    font-size: 1.2em;
-    margin-left: 0;
-    width: 100%;
     position: static;
+    font-size: 1.1em;
+    margin: auto;
+    margin-top: 20px;
+    width: 60%;
   }
   .container .main .desc strong {
     margin-left: 0;

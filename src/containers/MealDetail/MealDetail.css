@@ -82,6 +82,12 @@
   padding: 5% 0;
 }
 
+.container .mainArea .detail > p {
+  color: gold;
+  text-align: center;
+  font-size: 1.3em;
+}
+
 .container .mainArea .detail .specs {
   border-top: 1px gold solid;
   border-radius: 0;
@@ -262,6 +268,9 @@
   .container .modal .detail h2 {
     font-size: 1.8em;
   }
+  .container .modal .detail > p {
+    font-size: 1.2em;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -275,11 +284,33 @@
   .container .modal .mainArea .detail h2 {
     font-size: 2.5em;
   }
+  .container .modal .mainArea .detail h2 > p {
+    font-size: 1.3em;
+  }
 }
 
 @media only screen and (max-width: 400px) {
+  .container .modal {
+    width: 100%;
+  }
+  .container .modal img.latern {
+    right: 0;
+  }
+  .container .modal .mainArea .selectPanel {
+    font-size: 1em;
+  }
+  .container .modal .mainArea .selectPanel select {
+    border: 0;
+    padding: 2px;
+  }
+  .container .modal .mainArea .specs button {
+    font-size: 1em;
+  }
   .container .modal .mainArea .detail h2 {
     font-size: 1.5em;
+  }
+  .container .modal .mainArea .detail > p {
+    font-size: 1.2em;
   }
   .container .modal .mainArea > img {
     width: 30%;

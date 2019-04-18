@@ -167,9 +167,10 @@
 @media only screen and (max-width: 400px) {
   .container {
     .main {
+      width: 100%;
       .searchBar {
         position: static;
-        width: 100%;
+        width: 90%;
         padding: 20px 0;
         input {
           font-size: 0.8em;

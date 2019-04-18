@@ -11,6 +11,7 @@
 }
 
 .container .main {
+  width: 90%;
   margin: auto;
   padding-top: 5%;
   height: 80%;

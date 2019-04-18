@@ -117,3 +117,20 @@
     }
   }
 }
+@media only screen and (max-width: 400px) {
+  .container {
+    margin-top: 0;
+    height: 100%;
+  }
+  .openBtn {
+    opacity: 0.9;
+    background-color: green;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: 0;
+    display: inline-block;
+    border-radius: 4px;
+    height: auto;
+  }
+}

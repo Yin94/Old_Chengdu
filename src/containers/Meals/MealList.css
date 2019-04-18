@@ -209,9 +209,12 @@
 }
 
 @media only screen and (max-width: 400px) {
+  .container .main {
+    width: 100%;
+  }
   .container .main .searchBar {
     position: static;
-    width: 100%;
+    width: 90%;
     padding: 20px 0;
   }
   .container .main .searchBar input {

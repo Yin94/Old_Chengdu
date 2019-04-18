@@ -65,7 +65,11 @@
         font-size: 2.5em;
         padding: 5% 0;
       }
-
+      > p {
+        color: gold;
+        text-align: center;
+        font-size: 1.3em;
+      }
       .specs {
         border-top: 1px gold solid;
         border-radius: 0;
@@ -189,6 +193,9 @@
         h2 {
           font-size: 1.8em;
         }
+        > p {
+          font-size: 1.2em;
+        }
       }
     }
   }
@@ -204,6 +211,9 @@
         .detail {
           h2 {
             font-size: 2.5em;
+            > p {
+              font-size: 1.3em;
+            }
           }
         }
       }
@@ -214,10 +224,29 @@
 @media only screen and (max-width: 400px) {
   .container {
     .modal {
+      width: 100%;
+      img.latern {
+        right: 0;
+      }
       .mainArea {
+        .selectPanel {
+          font-size: 1em;
+          select {
+            border: 0;
+            padding: 2px;
+          }
+        }
+        .specs {
+          button {
+            font-size: 1em;
+          }
+        }
         .detail {
           h2 {
             font-size: 1.5em;
+          }
+          > p {
+            font-size: 1.2em;
           }
         }
         > img {
