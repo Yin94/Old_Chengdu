@@ -3,6 +3,7 @@ import Modal from '../../hoc/Modal/Modal';
 import GoogleMapReact from 'google-map-react';
 import classes from './AboutUs.css';
 import MapMarker from '../../UI/MapMarker/MapMarker';
+import { Link } from 'react-router-dom';
 export default function AboutUs({
   center = {
     lat: 43.04872179240851,
@@ -18,11 +19,12 @@ export default function AboutUs({
           alt='panda'
           className={classes.panda}
         />
-        <img
-          src={require('../../assets/images/MealList/logo.png')}
-          className={classes.icon}
-          alt='panda'
-        />
+        <Link to='/' className={classes.icon}>
+          <img
+            src={require('../../assets/images/MealList/logo.png')}
+            alt='panda'
+          />
+        </Link>
         <header>
           <h1>Lao ChengDu</h1>
         </header>

@@ -105,6 +105,12 @@ export default connect(
         <div className={classes.withBg}>
           {this.props.loading && <LoadingModal />}
           <div className={classes.container}>
+            <Link to='/'>
+              <img
+                src={require('../../assets/images/MealList/logo.png')}
+                alt='logo'
+              />
+            </Link>
             <div className={classes.main}>
               <div className={classes.list}>
                 <CartList list={list} deleteItem={this.onDeleteHandler} />
@@ -114,7 +120,7 @@ export default connect(
               </div>
               <div className={classes.desc}>
                 <img
-                  src={require('../../assets/images/MealList/logo.png')}
+                  src={require('../../assets/images/Cart/eatingpanda.gif')}
                   alt=''
                 />
 

@@ -104,7 +104,8 @@ export default connect(
           )}
           <div className={classes.modal}>
             <img
-              src={require('../../assets/images/MealDetail/panda.png')}
+              src={require('../../assets/images/MealList/logo.png')}
+              onClick={() => this.props.history.push('/')}
               alt=''
             />
 

@@ -20,6 +20,10 @@
   grid-area: icon;
 }
 
+.container .icon img {
+  width: 100%;
+}
+
 .container .panda {
   z-index: 1;
   position: absolute;
