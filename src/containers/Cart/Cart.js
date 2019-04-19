@@ -59,6 +59,10 @@ export default connect(
         this.props.logOut();
         return <Redirect to='auth/1' />;
       }
+      if (this.props.succeed)
+        setTimeout(() => {
+          this.props.history.push('/');
+        }, 1500);
       const list = this.props.list;
       const total = list.reduce(
         (prev, current) => prev + current.meal.price * current.count,
@@ -119,14 +123,16 @@ export default connect(
                 </strong>
               </div>
               <div className={classes.desc}>
-                <img
-                  src={require('../../assets/images/Cart/eatingpanda.gif')}
-                  alt=''
-                />
+                <div>
+                  <img
+                    src={require('../../assets/images/Cart/eatingpanda.gif')}
+                    alt=''
+                  />
 
-                <Button btn onClick={this.onOrderHandler}>
-                  Order Now
-                </Button>
+                  <Button btn onClick={this.onOrderHandler}>
+                    Order Now
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

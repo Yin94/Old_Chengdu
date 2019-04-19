@@ -32,7 +32,7 @@ export default function AboutUs({
         <div className={classes.positionMap}>
           <GoogleMapReact
             bootstrapURLKeys={{
-              key: 'AIzaSyA8hW0bjEmztS19igbPMnJ9h1jed7BQDFU'
+              key: process.env.REACT_APP_LAO_CHENGDU_APIKEY
             }}
             defaultCenter={center}
             defaultZoom={zoom}>

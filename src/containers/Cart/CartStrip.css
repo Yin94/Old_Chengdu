@@ -124,36 +124,31 @@
 }
 
 .container .main .desc {
+  width: 100%;
   text-align: center;
   position: relative;
 }
 
-.container .main .desc img {
-  max-width: 300px;
-  position: relative;
-  top: 10%;
+.container .main .desc > div {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
-.container .main .desc button {
-  position: absolute;
-  bottom: 2%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+.container .main .desc > div img {
+  max-width: 300px;
+  width: 100%;
+}
+
+.container .main .desc > div button {
+  margin: auto;
+  margin: 20px auto 5px auto;
   width: 80%;
+  max-width: 250px;
   display: block;
   font-size: 1.5em;
   background-color: green;
   color: white;
-}
-
-.container .main .desc strong {
-  margin-left: 20px;
-  color: green;
-  font-size: 1.5em;
-  font-weight: bold;
-  float: right;
-  width: 40;
 }
 
 @-webkit-keyframes slideIn {
@@ -199,13 +194,11 @@
         grid-template-columns: 4fr 1fr;
   }
   .container .main .desc {
-    width: 90%;
     margin: 0 auto;
   }
-  .container .main .desc button {
+  .container .main .desc > div button {
     font-size: 1em;
     padding: 10px;
-    margin: 30px auto;
   }
 }
 
@@ -228,28 +221,18 @@
     margin: auto;
     position: relative;
     text-align: left;
+  }
+  .container .main .desc > div {
+    position: static;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 2fr 1fr;
         grid-template-columns: 2fr 1fr;
   }
-  .container .main .desc img {
-    max-width: 50%;
-    position: static;
-    display: inline-block;
-  }
-  .container .main .desc button {
-    -webkit-transform: translate(0, 0%);
-            transform: translate(0, 0%);
-    position: static;
+  .container .main .desc > div button {
     font-size: 1em;
     margin: auto;
     width: 100%;
-  }
-  .container .main .desc strong {
-    padding-top: 10px;
-    float: none;
-    display: block;
   }
 }
 
@@ -294,24 +277,21 @@
   }
   .container .main .desc {
     width: 100%;
-    margin: auto;
+  }
+  .container .main .desc > div {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
-  .container .main .desc img {
+  .container .main .desc > div img {
     max-width: 60%;
     margin: auto;
   }
-  .container .main .desc button {
+  .container .main .desc > div button {
     position: static;
     font-size: 1.1em;
     margin: auto;
     margin-top: 20px;
     width: 60%;
-  }
-  .container .main .desc strong {
-    margin-left: 0;
-    font-size: 1.2em;
   }
 }
 /*# sourceMappingURL=CartStrip.css.map */

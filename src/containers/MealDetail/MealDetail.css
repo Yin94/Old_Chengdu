@@ -10,6 +10,7 @@
 
 .container .modal {
   width: 90%;
+  padding-bottom: 30px;
   max-width: 2000px;
   min-height: 100%;
   margin: auto;

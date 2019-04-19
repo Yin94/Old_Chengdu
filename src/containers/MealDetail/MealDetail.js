@@ -85,7 +85,8 @@ export default connect(
       if (this.props.addItemSucceed) {
         this.btnTextRef.current.innerHTML = '<span>&#10003;</span>';
         setTimeout(() => {
-          this.btnTextRef.current.innerHTML = '<span>Add to Basket</span>';
+          if (this.btnTextRef.current)
+            this.btnTextRef.current.innerHTML = '<span>Add to Basket</span>';
         }, 1000);
       }
 

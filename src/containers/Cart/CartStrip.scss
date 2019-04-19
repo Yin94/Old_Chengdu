@@ -102,32 +102,29 @@
       }
     }
     .desc {
+      width: 100%;
       text-align: center;
       position: relative;
-      img {
-        max-width: 300px;
-        position: relative;
-        top: 10%;
-      }
-      button {
-        position: absolute;
-        bottom: 2%;
-        left: 50%;
-        transform: translate(-50%, 0);
-        width: 80%;
-        display: block;
 
-        font-size: 1.5em;
-        background-color: green;
-        color: white;
-      }
-      strong {
-        margin-left: 20px;
-        color: green;
-        font-size: 1.5em;
-        font-weight: bold;
-        float: right;
-        width: 40;
+      > div {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        img {
+          max-width: 300px;
+          width: 100%;
+        }
+        button {
+          margin: auto;
+          margin: 20px auto 5px auto;
+          width: 80%;
+          max-width: 250px;
+          display: block;
+
+          font-size: 1.5em;
+          background-color: green;
+          color: white;
+        }
       }
     }
   }
@@ -157,12 +154,12 @@
       grid-row-gap: 20px;
       grid-template-columns: 4fr 1fr;
       .desc {
-        width: 90%;
         margin: 0 auto;
-        button {
-          font-size: 1em;
-          padding: 10px;
-          margin: 30px auto;
+        > div {
+          button {
+            font-size: 1em;
+            padding: 10px;
+          }
         }
       }
     }
@@ -191,24 +188,15 @@
         margin: auto;
         position: relative;
         text-align: left;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        img {
-          max-width: 50%;
+        > div {
           position: static;
-          display: inline-block;
-        }
-        button {
-          transform: translate(0, 0%);
-          position: static;
-          font-size: 1em;
-          margin: auto;
-          width: 100%;
-        }
-        strong {
-          padding-top: 10px;
-          float: none;
-          display: block;
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+          button {
+            font-size: 1em;
+            margin: auto;
+            width: 100%;
+          }
         }
       }
     }
@@ -255,25 +243,21 @@
           }
         }
       }
-
       .desc {
         width: 100%;
-        margin: auto;
-        grid-template-columns: 1fr;
-        img {
-          max-width: 60%;
-          margin: auto;
-        }
-        button {
-          position: static;
-          font-size: 1.1em;
-          margin: auto;
-          margin-top: 20px;
-          width: 60%;
-        }
-        strong {
-          margin-left: 0;
-          font-size: 1.2em;
+        > div {
+          grid-template-columns: 1fr;
+          img {
+            max-width: 60%;
+            margin: auto;
+          }
+          button {
+            position: static;
+            font-size: 1.1em;
+            margin: auto;
+            margin-top: 20px;
+            width: 60%;
+          }
         }
       }
     }
